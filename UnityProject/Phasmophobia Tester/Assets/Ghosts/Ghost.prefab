@@ -46,11 +46,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ghost
   ghostName: 
   walkSpeed: 1.7
-  losSpeed: 1
+  losSpeed: 1.7
   losSpeedGainMultiplier: 1.65
   losSpeedGainTime: 26
+  huntSanityThreashold: 50
+  huntCooldown: 25
+  smudgeHuntCooldown: 90
   blinkVisibleMinMax: {x: 0.08, y: 0.3}
   blinkInvisibleMinMax: {x: 0.1, y: 0.92}
   perFlickerLengthMinMax: {x: 0.3, y: 1}
-  ghostModel: {fileID: 0}
-  ghostGender: 0
+  ghostGender: 2

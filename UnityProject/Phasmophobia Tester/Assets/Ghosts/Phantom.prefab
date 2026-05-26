@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5961522683769251470
+--- !u!1001 &934362152635070448
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,12 +9,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
-      propertyPath: ghostName
-      value: Banshee
+      propertyPath: blinkInvisibleMinMax.x
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
-      propertyPath: ghostGender
+      propertyPath: blinkInvisibleMinMax.y
+      value: 1.92
+      objectReference: {fileID: 0}
+    - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      propertyPath: perFlickerLengthMinMax.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      propertyPath: perFlickerLengthMinMax.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2301801641718435162, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: m_Name
-      value: Banshee
+      value: Phantom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5961522683769251470
+--- !u!1001 &8930047407794940503
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,12 +9,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
-      propertyPath: ghostName
-      value: Banshee
+      propertyPath: losSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
-      propertyPath: ghostGender
-      value: 1
+      propertyPath: walkSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2301801641718435162, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: m_Name
-      value: Banshee
+      value: Twins
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

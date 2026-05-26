@@ -13,8 +13,7 @@ public class Ghost : MonoBehaviour
 {
     private GameManager gameManager;
 
-    [SerializeField] protected string ghostName;
-    [SerializeField] protected float walkSpeed, losSpeed, losSpeedGainMultiplier, losSpeedGainTime;
+    [SerializeField] protected float walkSpeed, losSpeed, losSpeedGainMultiplier, losSpeedGainTime, huntSanityThreashold, huntCooldown, smudgeHuntCooldown;
     [SerializeField] protected Vector2 blinkVisibleMinMax, blinkInvisibleMinMax, perFlickerLengthMinMax;
     [SerializeField] protected ghostGender ghostGender;
 
@@ -28,6 +27,7 @@ public class Ghost : MonoBehaviour
         gameManager = FindAnyObjectByType<GameManager>();
         canvas = gameManager.Canvas;
         ghostModel = gameManager.GhostModel;
+        Instantiate(ghostModel, canvas.transform);
     }
 
 

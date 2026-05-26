@@ -9,16 +9,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      propertyPath: losSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: ghostName
       value: Aswang
       objectReference: {fileID: 0}
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: walkSpeed
-      value: 1.5
+      value: 1.53
       objectReference: {fileID: 0}
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: ghostGender
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      propertyPath: losSpeedGainTime
+      value: 17.33
       objectReference: {fileID: 0}
     - target: {fileID: 2301801641718435162, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: m_LocalPosition.x
