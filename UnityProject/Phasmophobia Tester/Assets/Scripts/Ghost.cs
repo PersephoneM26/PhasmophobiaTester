@@ -19,7 +19,7 @@ public class Ghost : MonoBehaviour
 
     protected Canvas canvas;
     protected GameObject ghostModel;
-    protected float currentSpeed, currentStepsPerSecond;
+    protected float currentSpeed;
 
     public ghostGender GhostGender => ghostGender;
 
@@ -30,7 +30,6 @@ public class Ghost : MonoBehaviour
         ghostModel = gameManager.GhostModel;
         Instantiate(ghostModel, canvas.transform);
         currentSpeed = walkSpeed;
-        currentStepsPerSecond = SpeedToStepsPerSecond(currentSpeed);
     }
 
 
@@ -46,7 +45,7 @@ public class Ghost : MonoBehaviour
 
     public void PlayFootsteps()
     {
-        InvokeRepeating(nameof(Step), 0, currentStepsPerSecond);
+        Invoke(nameof(Step), 0);
     }
 
     public void StopFootsteps()
@@ -57,10 +56,12 @@ public class Ghost : MonoBehaviour
     private void Step()
     {
         FMODUnity.RuntimeManager.PlayOneShot(gameManager.Footstep);
+        Debug.Log(SpeedToStepsPerSecond(currentSpeed));
+        Invoke(nameof(Step), SpeedToStepsPerSecond(currentSpeed));
     }
 
     private float SpeedToStepsPerSecond(float speed)
     {
-        return 60f / (5.3847f * (Mathf.Pow(speed, 2f)) + 46.3881f * speed + 22.9986f);
+        return 60f / (60f / (Random.Range(-0.1f, -0.05f) + (1f / speed)));
     }
 }
