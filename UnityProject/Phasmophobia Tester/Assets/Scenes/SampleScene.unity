@@ -1129,8 +1129,57 @@ MonoBehaviour:
   - {fileID: 4864512398046738747, guid: 9d7cff344a4210f4197e9ea4f33b3459, type: 3}
   - {fileID: 4493255481022696774, guid: d6bf90e7ad5280e49b9e6fbaeec6e974, type: 3}
   forcedGhostTypes: []
-  ghostNamesMale: []
-  ghostNamesFemale: []
+  ghostNamesMale:
+  - Liam
+  - Oliver
+  - James
+  - Elijah
+  - Lucas
+  - Benjamin
+  - Henry
+  - Alexander
+  - Mason
+  - Ethan
+  - Daniel
+  - Jacob
+  - Logan
+  - Jackson
+  - Levi
+  - Sebastian
+  ghostNamesFemale:
+  - Emma
+  - Charlotte
+  - Amelia
+  - Rose
+  - Sophia
+  - Isabella
+  - Anya
+  - Ava
+  - Mia
+  - Evelyn
+  - Luna
+  - Harper
+  - Lilleth
+  - Camila
+  - Abigail
+  - Scarlett
+  ghostLastNames:
+  - Smith
+  - Johnson
+  - Williams
+  - Garcia
+  - Rodriguez
+  - Lopez
+  - Anderson
+  - Moore
+  - Thompson
+  - King
+  - Nguyen
+  - Flores
+  - Hill
+  - Young
+  - Sanchez
+  - Lee
   ghostModelsMale:
   - {fileID: 365087348206172901, guid: a090b3f3819417a4bb7465038d1109ae, type: 3}
   ghostModelsFemale:
@@ -1142,6 +1191,7 @@ MonoBehaviour:
       Data3: 109766024
       Data4: 895789327
     Path: event:/Footstep
+  gracePeriod: 0
   canvas: {fileID: 880996184}
 --- !u!4 &1817814495
 Transform:

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum ghostGender
 {
@@ -17,19 +19,14 @@ public class Ghost : MonoBehaviour
     [SerializeField] protected Vector2 blinkVisibleMinMax, blinkInvisibleMinMax, perFlickerLengthMinMax;
     [SerializeField] protected ghostGender ghostGender;
 
-    protected Canvas canvas;
-    protected GameObject ghostModelPrefab, ghostModel;
     protected float currentSpeed, blinkOutTimeTemp, blinkInTimeTemp;
+    protected bool isMale;
 
     public ghostGender GhostGender => ghostGender;
 
     private void Awake()
     {
         gameManager = FindAnyObjectByType<GameManager>();
-        canvas = gameManager.Canvas;
-        ghostModelPrefab = gameManager.GhostModel;
-        ghostModel = Instantiate(ghostModelPrefab, canvas.transform);
-        ghostModel.SetActive(false);
         currentSpeed = walkSpeed;
     }
 
@@ -46,13 +43,13 @@ public class Ghost : MonoBehaviour
 
     public void PlayFootsteps()
     {
-        Invoke(nameof(Step), 0);
+        Invoke(nameof(Step), gameManager.GracePeriod);
     }
 
     public void StopHunt()
     {
         CancelInvoke();
-        ghostModel?.SetActive(false);
+        gameManager.GhostModel.GetComponent<Image>().enabled = false;
     }
 
     private void Step()
@@ -69,22 +66,27 @@ public class Ghost : MonoBehaviour
 
     public void StartBlinks()
     {
-        ghostModel.SetActive(true);
-        Invoke(nameof(BlinkOut), 2f);
+        gameManager.GhostModel.GetComponent<Image>().enabled = true;
+        Invoke(nameof(BlinkOut), gameManager.GracePeriod);
     }
 
 
     public void BlinkOut()
     {
-        ghostModel.SetActive(false);
+        gameManager.GhostModel.GetComponent<Image>().enabled = false;
         blinkOutTimeTemp = Random.Range(blinkInvisibleMinMax.x, blinkInvisibleMinMax.y);
         Invoke(nameof(BlinkIn), blinkOutTimeTemp);
     }
     public void BlinkIn()
     {
-        ghostModel.SetActive(true);
+        gameManager.GhostModel.GetComponent<Image>().enabled = true;
         blinkInTimeTemp = Random.Range(blinkVisibleMinMax.x, blinkVisibleMinMax.y);
         blinkInTimeTemp = Mathf.Clamp((blinkInTimeTemp + blinkOutTimeTemp), perFlickerLengthMinMax.x, perFlickerLengthMinMax.y) - blinkOutTimeTemp;
         Invoke(nameof(BlinkOut), blinkInTimeTemp);
+    }
+
+    public void SetGender(bool male)
+    {
+        isMale = male;
     }
 }
