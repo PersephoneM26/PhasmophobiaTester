@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Serialized ghost variables
-    [SerializeField] private List<Ghost> ghostTypes = new();
+    [SerializeField] private List<Ghost> ghostTypes = new(), forcedGhostTypes = new();
     [SerializeField] private List<string> ghostNamesMale, ghostNamesFemale;
     [SerializeField] private List<GameObject> ghostModelsMale = new(), ghostModelsFemale = new();
     [SerializeField] private EventReference footstep;
@@ -29,6 +29,11 @@ public class GameManager : MonoBehaviour
     {
         //setup ghost variables
         isMale = Random.value > 0.5f;
+        if (forcedGhostTypes.Count > 0)
+        {
+            ghostTypes.Clear();
+            ghostTypes.AddRange(forcedGhostTypes);
+        }
         List<Ghost> genderedGhostTypes = GetGenderedGhostList(isMale, ghostTypes);
         ghostPrefab = genderedGhostTypes[Random.Range(0, genderedGhostTypes.Count)];
         if(isMale) ghostModel = ghostModelsMale[Random.Range(0, ghostModelsMale.Count)];
@@ -53,13 +58,14 @@ public class GameManager : MonoBehaviour
         return allGhosts;
     }
 
-    public void PlaySounds()
+    public void StartHunt()
     {
         ghost.PlayFootsteps();
+        ghost.StartBlinks();
     }
 
-    public void StopSounds()
+    public void StopHunt()
     {
-        ghost.StopFootsteps();
+        ghost.StopHunt();
     }
 }

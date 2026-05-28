@@ -21,12 +21,28 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      propertyPath: blinkVisibleMinMax.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: huntSanityThreashold
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      propertyPath: blinkInvisibleMinMax.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: losSpeedGainMultiplier
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      propertyPath: perFlickerLengthMinMax.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      propertyPath: perFlickerLengthMinMax.y
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2301801641718435162, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: m_LocalPosition.x

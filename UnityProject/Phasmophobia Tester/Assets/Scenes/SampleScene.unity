@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1817814494}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: PlaySounds
+        m_MethodName: StartHunt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1022,7 +1022,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1817814494}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StopSounds
+        m_MethodName: StopHunt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1104,20 +1104,20 @@ MonoBehaviour:
   - {fileID: 9192550892300723652, guid: 86700232c767f0f448e7241ebb1a8ca3, type: 3}
   - {fileID: 5085405700146181022, guid: bdfde71b5d7f1a04eae3d85d3534a6eb, type: 3}
   - {fileID: 7292245067804564364, guid: e5c89dec5dde48c44a5bdd2ff1a681c1, type: 3}
-  - {fileID: 5184717608068076653, guid: 2df9087fb521d644792965a9fcff1b64, type: 3}
   - {fileID: 5716716824782716074, guid: 0c12671f93737fd4285a633bb6ccb1ee, type: 3}
   - {fileID: 3190285572008148490, guid: efb274aa5006cbd4bb37035ede078484, type: 3}
   - {fileID: 7086372536885546628, guid: db458ddfa5cfd1445b93d86037a9772d, type: 3}
   - {fileID: 2897982637189504430, guid: 2742134278d080940bb3972a0f06dd14, type: 3}
   - {fileID: 3744916897159310518, guid: 9a11a401e68f4034f9937694247c3607, type: 3}
   - {fileID: 1166490571632099684, guid: fe5c260519208094a8034ca8482faa04, type: 3}
+  - {fileID: 2440546875608593594, guid: 22af382858d2d2c43a3c0e5af47667e1, type: 3}
+  - {fileID: 5184717608068076653, guid: 2df9087fb521d644792965a9fcff1b64, type: 3}
   - {fileID: 74884511617089183, guid: 428934142e8f7b048b0439b03a4d29e2, type: 3}
   - {fileID: 9151678563615235492, guid: 4bbdacbdf5a1c6d458650335e523fc96, type: 3}
   - {fileID: 6848228864729303120, guid: 9a491b9215674254b80b802be61b2f7e, type: 3}
-  - {fileID: 6754663185564652913, guid: 77a3d17525b3c5244a24fc10b2ed7d7b, type: 3}
   - {fileID: 4357758248579223424, guid: cb9946a1a2c3f114d9b548e90d8e5246, type: 3}
+  - {fileID: 6754663185564652913, guid: 77a3d17525b3c5244a24fc10b2ed7d7b, type: 3}
   - {fileID: 7269380763430480723, guid: e3e2b6725da145b4db2fa8fb70190f99, type: 3}
-  - {fileID: 2440546875608593594, guid: 22af382858d2d2c43a3c0e5af47667e1, type: 3}
   - {fileID: 7630254056804911439, guid: 6ef717a7bb9a80747b1176b8cde7a230, type: 3}
   - {fileID: 4691938213523403889, guid: 28f80338a07c4884ab4e469ff3bc49a0, type: 3}
   - {fileID: 2459662306381832831, guid: 287045b71d6620d42aa3154ccbe0826b, type: 3}
@@ -1128,7 +1128,7 @@ MonoBehaviour:
   - {fileID: 7682068660496214045, guid: 823cee9865f4c5d4da43dca995d1bf1d, type: 3}
   - {fileID: 4864512398046738747, guid: 9d7cff344a4210f4197e9ea4f33b3459, type: 3}
   - {fileID: 4493255481022696774, guid: d6bf90e7ad5280e49b9e6fbaeec6e974, type: 3}
-  isMale: 0
+  forcedGhostTypes: []
   ghostNamesMale: []
   ghostNamesFemale: []
   ghostModelsMale:

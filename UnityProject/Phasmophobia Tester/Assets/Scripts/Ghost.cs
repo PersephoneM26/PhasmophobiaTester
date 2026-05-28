@@ -18,8 +18,8 @@ public class Ghost : MonoBehaviour
     [SerializeField] protected ghostGender ghostGender;
 
     protected Canvas canvas;
-    protected GameObject ghostModel;
-    protected float currentSpeed;
+    protected GameObject ghostModelPrefab, ghostModel;
+    protected float currentSpeed, blinkOutTimeTemp, blinkInTimeTemp;
 
     public ghostGender GhostGender => ghostGender;
 
@@ -27,8 +27,9 @@ public class Ghost : MonoBehaviour
     {
         gameManager = FindAnyObjectByType<GameManager>();
         canvas = gameManager.Canvas;
-        ghostModel = gameManager.GhostModel;
-        Instantiate(ghostModel, canvas.transform);
+        ghostModelPrefab = gameManager.GhostModel;
+        ghostModel = Instantiate(ghostModelPrefab, canvas.transform);
+        ghostModel.SetActive(false);
         currentSpeed = walkSpeed;
     }
 
@@ -48,20 +49,42 @@ public class Ghost : MonoBehaviour
         Invoke(nameof(Step), 0);
     }
 
-    public void StopFootsteps()
+    public void StopHunt()
     {
         CancelInvoke();
+        ghostModel?.SetActive(false);
     }
 
     private void Step()
     {
         FMODUnity.RuntimeManager.PlayOneShot(gameManager.Footstep);
-        Debug.Log(SpeedToStepsPerSecond(currentSpeed));
+        //Debug.Log(SpeedToStepsPerSecond(currentSpeed));
         Invoke(nameof(Step), SpeedToStepsPerSecond(currentSpeed));
     }
 
     private float SpeedToStepsPerSecond(float speed)
     {
         return 60f / (60f / (Random.Range(-0.1f, -0.05f) + (1f / speed)));
+    }
+
+    public void StartBlinks()
+    {
+        ghostModel.SetActive(true);
+        Invoke(nameof(BlinkOut), 2f);
+    }
+
+
+    public void BlinkOut()
+    {
+        ghostModel.SetActive(false);
+        blinkOutTimeTemp = Random.Range(blinkInvisibleMinMax.x, blinkInvisibleMinMax.y);
+        Invoke(nameof(BlinkIn), blinkOutTimeTemp);
+    }
+    public void BlinkIn()
+    {
+        ghostModel.SetActive(true);
+        blinkInTimeTemp = Random.Range(blinkVisibleMinMax.x, blinkVisibleMinMax.y);
+        blinkInTimeTemp = Mathf.Clamp((blinkInTimeTemp + blinkOutTimeTemp), perFlickerLengthMinMax.x, perFlickerLengthMinMax.y) - blinkOutTimeTemp;
+        Invoke(nameof(BlinkOut), blinkInTimeTemp);
     }
 }
