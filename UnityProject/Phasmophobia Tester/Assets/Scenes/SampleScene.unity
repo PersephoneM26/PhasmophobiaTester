@@ -131,6 +131,9 @@ GameObject:
   - component: {fileID: 93547683}
   - component: {fileID: 93547682}
   - component: {fileID: 93547681}
+  - component: {fileID: 93547686}
+  - component: {fileID: 93547685}
+  - component: {fileID: 93547684}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -252,6 +255,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93547679}
   m_CullTransparentMesh: 1
+--- !u!64 &93547684
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93547679}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4277936243970900915, guid: 9ad131497dd2d1545b6c35e7cc732b35, type: 3}
+--- !u!23 &93547685
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93547679}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &93547686
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93547679}
+  m_Mesh: {fileID: 4277936243970900915, guid: 9ad131497dd2d1545b6c35e7cc732b35, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +870,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &880996183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,9 +1263,53 @@ MonoBehaviour:
   - Sanchez
   - Lee
   ghostModelsMale:
-  - {fileID: 365087348206172901, guid: a090b3f3819417a4bb7465038d1109ae, type: 3}
+  - {fileID: 21300000, guid: 57a28dc64fbd1d244bbf7c44680a987d, type: 3}
+  - {fileID: 21300000, guid: 373fc9771cfa10b4297f916b7dd93ad9, type: 3}
+  - {fileID: 21300000, guid: a31e2b7b7287213468e09d50c06fc223, type: 3}
+  - {fileID: 21300000, guid: 4ba2930ac8b325c48b2d1c4e556be307, type: 3}
+  - {fileID: 21300000, guid: 4ef3df9d022116e4986d1494b9d30843, type: 3}
+  - {fileID: 21300000, guid: 0e3eac567c4c43c4088448777c82b540, type: 3}
+  - {fileID: 21300000, guid: 2e841cd4961198f4996a860f4c36ac3d, type: 3}
+  - {fileID: 21300000, guid: e36ef44628d11834b9a61adb49e157f9, type: 3}
+  - {fileID: 21300000, guid: beddf048f97e366439813d0869f8dcae, type: 3}
+  - {fileID: 21300000, guid: 278e7ea7b5cbd7c4aa198093fac2292f, type: 3}
+  - {fileID: 21300000, guid: 7e78a741805835b4e84a59dd0b5efd6e, type: 3}
+  - {fileID: 21300000, guid: 0de0756870f2395409184165b24db8b0, type: 3}
+  - {fileID: 21300000, guid: a9b07f1b91d0054409e2ec7587a8a6cb, type: 3}
+  - {fileID: 21300000, guid: 44da15b4bca61054d998866e89eb63b7, type: 3}
+  - {fileID: 21300000, guid: 4526f9c85aa35b0479ee38011505f363, type: 3}
+  - {fileID: 21300000, guid: 7c2d5d6e7e6567148a75c21cfcbf218d, type: 3}
+  - {fileID: 21300000, guid: bd7d296143a69b0498ebf90afd361b23, type: 3}
+  - {fileID: 21300000, guid: fb301d9810c644b468108dcc572db984, type: 3}
+  - {fileID: 21300000, guid: 8e46747414f85124e98ddbe86c6c6eca, type: 3}
   ghostModelsFemale:
-  - {fileID: 7950559975191180193, guid: 8f8d966d06c57e647a5b5fc9d279e7b6, type: 3}
+  - {fileID: 21300000, guid: 73448d93109994a439a3630f42bd8443, type: 3}
+  - {fileID: 21300000, guid: 6f748648663475d439b53778599f89dc, type: 3}
+  - {fileID: 21300000, guid: bf3c53305a6b0284a9f9b80a21cc4f4b, type: 3}
+  - {fileID: 21300000, guid: 8b109a9a76b39184095c9147a5cd8105, type: 3}
+  - {fileID: 21300000, guid: 2c561eb7d0f16894b850852b9629b818, type: 3}
+  - {fileID: 21300000, guid: cd62cf9e0c9289241a40b7c0076ab8a0, type: 3}
+  - {fileID: 21300000, guid: bd67008b5b2a54c45a55f00ddb3fe236, type: 3}
+  - {fileID: 21300000, guid: 832e7ff585d81e84091a97748caf7878, type: 3}
+  - {fileID: 21300000, guid: 034fc49f3d23d094e97a4495c6562cf2, type: 3}
+  - {fileID: 21300000, guid: 4840fc32e46485646a1aba4c7601fdc8, type: 3}
+  - {fileID: 21300000, guid: 668b1b0197bf2f14fa6986f94ba25a56, type: 3}
+  - {fileID: 21300000, guid: d9f771e1b1ded5341952081e27f4aac9, type: 3}
+  - {fileID: 21300000, guid: 4ce76e945d0d49e4383e41b1419740d2, type: 3}
+  - {fileID: 21300000, guid: eea9035c800ebb14f8cfa5aef4c3c713, type: 3}
+  - {fileID: 21300000, guid: cd9027dd850d66e42b2be66f32c13f3e, type: 3}
+  - {fileID: 21300000, guid: fe7e34fc2cb87b7479169590ffd72292, type: 3}
+  - {fileID: 21300000, guid: f1c4ec5bf5c5c234a89ed81168156a08, type: 3}
+  - {fileID: 21300000, guid: f5b0089a80f65cf4aabda4c2c072c7a1, type: 3}
+  - {fileID: 21300000, guid: 4f5cbc4281ad8fc4799389c3d02fb7c8, type: 3}
+  - {fileID: 21300000, guid: cab598ac64db75642aac3a6a967a6a86, type: 3}
+  - {fileID: 21300000, guid: c6d022cd4f707a14cae6b55e540004f4, type: 3}
+  - {fileID: 21300000, guid: 3e9ef0a80ec4e9a46bbef9fe118077b7, type: 3}
+  - {fileID: 21300000, guid: a4a94ec2d44c20547a0a64cfeba43613, type: 3}
+  - {fileID: 21300000, guid: c523bb6d9c9326941aa5b37b881ff7f9, type: 3}
+  - {fileID: 21300000, guid: fff8df5655401bd43aafff6aefd0e165, type: 3}
+  - {fileID: 21300000, guid: af46cc48c1f2b1b4aa3bb3d07f29ce9b, type: 3}
+  ghostModelPrefab: {fileID: 7950559975191180193, guid: 8f8d966d06c57e647a5b5fc9d279e7b6, type: 3}
   footstep:
     Guid:
       Data1: -997638482

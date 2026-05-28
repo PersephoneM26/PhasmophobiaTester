@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     // Serialized ghost variables
     [SerializeField] private List<Ghost> ghostTypes = new(), forcedGhostTypes = new();
     [SerializeField] private List<string> ghostNamesMale, ghostNamesFemale, ghostLastNames;
-    [SerializeField] private List<GameObject> ghostModelsMale = new(), ghostModelsFemale = new();
+    [SerializeField] private List<Sprite> ghostModelsMale = new(), ghostModelsFemale = new();
+    [SerializeField] private GameObject ghostModelPrefab;
     [SerializeField] private EventReference footstep;
     [SerializeField] private float gracePeriod;
 
@@ -39,8 +40,6 @@ public class GameManager : MonoBehaviour
         }
         List<Ghost> genderedGhostTypes = GetGenderedGhostList(isMale, ghostTypes);
         ghostPrefab = genderedGhostTypes[Random.Range(0, genderedGhostTypes.Count)];
-        if(isMale) ghostModel = ghostModelsMale[Random.Range(0, ghostModelsMale.Count)];
-        else ghostModel = ghostModelsFemale[Random.Range(0, ghostModelsFemale.Count)];
         ghost = Instantiate(ghostPrefab);
 
         // Get ghost name
@@ -50,8 +49,9 @@ public class GameManager : MonoBehaviour
         name += " " + ghostLastNames[Random.Range(0, ghostLastNames.Count)];
 
         // Get ghost model
-        if (isMale) ghostModel = Instantiate(ghostModelsMale[Random.Range(0, ghostModelsMale.Count)], canvas.transform);
-        else ghostModel = Instantiate(ghostModelsFemale[Random.Range(0, ghostModelsFemale.Count)], canvas.transform);
+        ghostModel = Instantiate(ghostModelPrefab, canvas.transform);
+        if (isMale) ghostModel.GetComponent<Image>().sprite = ghostModelsMale[Random.Range(0, ghostModelsMale.Count)];
+        else ghostModel.GetComponent<Image>().sprite = ghostModelsFemale[Random.Range(0, ghostModelsFemale.Count)];
         ghostModel.GetComponentInChildren<TextMeshProUGUI>().text = name;
         ghostModel.GetComponent<Image>().enabled = false;
     }
