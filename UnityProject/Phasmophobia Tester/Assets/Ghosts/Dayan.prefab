@@ -64,8 +64,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dayan
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6500282907439592138}
   m_SourcePrefab: {fileID: 100100000, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+--- !u!1 &6596084470191024781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+  m_PrefabInstance: {fileID: 7763054108994613460}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6500282907439592138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6596084470191024781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9014af96193c1c345ad322189679d044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  walkSpeed: 1.7
+  losSpeed: 1.7
+  losSpeedGainMultiplier: 1
+  losSpeedGainTime: 26
+  huntSanityThreashold: 50
+  huntCooldown: 25
+  smudgeHuntCooldown: 90
+  distanceUpdateFrequence: 1.5
+  blinkVisibleMinMax: {x: 0.08, y: 0.3}
+  blinkInvisibleMinMax: {x: 0.1, y: 0.92}
+  perFlickerLengthMinMax: {x: 0.3, y: 1}
+  huntStartingDistanceMinMax: {x: 10, y: 20}
+  ghostGender: 1
+  distanceText: {fileID: 0}
+  sanityText: {fileID: 0}
+  timeBetweenHuntsText: {fileID: 0}
+  walkingHuntSanity: 65
+  stillHuntSanity: 45
+  awayHuntSanity: 50
+  walkingSpeed: 2.25
+  stillSpeed: 1.2
+  awaySpeed: 1.7

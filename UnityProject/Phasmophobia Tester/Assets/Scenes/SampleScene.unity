@@ -2031,7 +2031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   ghostTypes:
   - {fileID: 5752419800539536778, guid: ae19c00bdcd1bdb42b44425ecf49492a, type: 3}
-  - {fileID: 5085405700146181022, guid: bdfde71b5d7f1a04eae3d85d3534a6eb, type: 3}
+  - {fileID: 6500282907439592138, guid: bdfde71b5d7f1a04eae3d85d3534a6eb, type: 3}
   - {fileID: 7292245067804564364, guid: e5c89dec5dde48c44a5bdd2ff1a681c1, type: 3}
   - {fileID: 7086372536885546628, guid: db458ddfa5cfd1445b93d86037a9772d, type: 3}
   - {fileID: 2897982637189504430, guid: 2742134278d080940bb3972a0f06dd14, type: 3}

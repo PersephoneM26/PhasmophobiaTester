@@ -37,7 +37,7 @@ public class Ghost : MonoBehaviour
         currentSanity = gameManager.StartingSanity;
     }
 
-    protected void Update()
+    protected virtual void Update()
     {
         if (hasLOS)
         {
@@ -105,7 +105,7 @@ public class Ghost : MonoBehaviour
         Invoke(nameof(Move), gameManager.GracePeriod);
     }
 
-    private void Move()
+    protected virtual void Move()
     {
         if (hasLOS) distanceFromPlayer -= currentSpeed * distanceUpdateFrequence;
         else distanceFromPlayer += (Random.Range(-currentSpeed, currentSpeed) * distanceUpdateFrequence);
