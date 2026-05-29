@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Sprite> ghostModelsMale = new(), ghostModelsFemale = new();
     [SerializeField] private GameObject ghostModelPrefab;
     [SerializeField] private EventReference footstep;
-    [SerializeField] private float gracePeriod;
+    [SerializeField] private float gracePeriod, startingSanity, playerSpeed;
 
     // Internal ghost variables
     private bool isMale;
@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     // Ghost properties
     public GameObject GhostModel => ghostModel;
+    public float StartingSanity => startingSanity;
+    public float PlayerSpeed => playerSpeed;
 
     // Misc variables
     [SerializeField] private Canvas canvas;
@@ -80,6 +82,8 @@ public class GameManager : MonoBehaviour
         ghost.PlayFootsteps();
         ghost.StartBlinks();
         ghost.StartMoving();
+        ghost.GetTimeSinceLastHunt();
+        ghost.GetHuntSanity();
     }
 
     public void StopHunt()
@@ -94,5 +98,10 @@ public class GameManager : MonoBehaviour
     public void GhostLoseLOS()
     {
         ghost.LoseLOS();
+    }
+    public void SmudgeGhost()
+    {
+        ghost.Smudge();
+        ghost.StopHunt();
     }
 }
