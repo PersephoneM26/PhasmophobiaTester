@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cbcecbd32deed54496c43c64da64c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ghost
-  ghostName: 
   walkSpeed: 1.7
   losSpeed: 1.7
   losSpeedGainMultiplier: 1.65
@@ -52,7 +51,10 @@ MonoBehaviour:
   huntSanityThreashold: 50
   huntCooldown: 25
   smudgeHuntCooldown: 90
+  distanceUpdateFrequence: 1.5
   blinkVisibleMinMax: {x: 0.08, y: 0.3}
   blinkInvisibleMinMax: {x: 0.1, y: 0.92}
   perFlickerLengthMinMax: {x: 0.3, y: 1}
+  huntStartingDistanceMinMax: {x: 10, y: 20}
   ghostGender: 2
+  distanceText: {fileID: 0}

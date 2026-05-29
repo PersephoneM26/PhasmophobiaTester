@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
         }
         List<Ghost> genderedGhostTypes = GetGenderedGhostList(isMale, ghostTypes);
         ghostPrefab = genderedGhostTypes[Random.Range(0, genderedGhostTypes.Count)];
-        ghost = Instantiate(ghostPrefab);
 
         // Get ghost name
         string name = "";
@@ -52,8 +51,11 @@ public class GameManager : MonoBehaviour
         ghostModel = Instantiate(ghostModelPrefab, canvas.transform);
         if (isMale) ghostModel.GetComponent<Image>().sprite = ghostModelsMale[Random.Range(0, ghostModelsMale.Count)];
         else ghostModel.GetComponent<Image>().sprite = ghostModelsFemale[Random.Range(0, ghostModelsFemale.Count)];
-        ghostModel.GetComponentInChildren<TextMeshProUGUI>().text = name;
+        ghostModel.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = name;
         ghostModel.GetComponent<Image>().enabled = false;
+
+        // Instantiate ghost
+        ghost = Instantiate(ghostPrefab);
     }
 
     private List<Ghost> GetGenderedGhostList(bool isMale, List<Ghost> allGhosts)
@@ -77,10 +79,20 @@ public class GameManager : MonoBehaviour
     {
         ghost.PlayFootsteps();
         ghost.StartBlinks();
+        ghost.StartMoving();
     }
 
     public void StopHunt()
     {
         ghost.StopHunt();
+    }
+    public void GhostGainLOS()
+    {
+        ghost.GainLOS();
+    }
+
+    public void GhostLoseLOS()
+    {
+        ghost.LoseLOS();
     }
 }
