@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Sprite> ghostModelsMale = new(), ghostModelsFemale = new();
     [SerializeField] private GameObject ghostModelPrefab;
     [SerializeField] private EventReference footstep;
-    [SerializeField] private float gracePeriod, startingSanity, playerSpeed;
+    [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence;
 
     // Internal ghost variables
     private bool isMale;
@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject GhostModel => ghostModel;
     public float StartingSanity => startingSanity;
     public float PlayerSpeed => playerSpeed;
+    public float DistanceUpdateFrequence => distanceUpdateFrequence;
 
     // Misc variables
     [SerializeField] private Canvas canvas;

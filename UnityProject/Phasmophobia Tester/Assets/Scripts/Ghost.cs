@@ -15,11 +15,11 @@ public class Ghost : MonoBehaviour
 {
     private GameManager gameManager;
 
-    [SerializeField] protected float walkSpeed, losSpeed, losSpeedGainMultiplier, losSpeedGainTime, huntSanityThreashold, huntCooldown, smudgeHuntCooldown, distanceUpdateFrequence;
+    [SerializeField] protected float walkSpeed, losSpeed, losSpeedGainMultiplier, losSpeedGainTime, losSpeedDecayTime, huntSanityThreashold, huntCooldown, smudgeHuntCooldown;
     [SerializeField] protected Vector2 blinkVisibleMinMax, blinkInvisibleMinMax, perFlickerLengthMinMax, huntStartingDistanceMinMax;
     [SerializeField] protected ghostGender ghostGender;
-    [SerializeField] protected TextMeshProUGUI distanceText, sanityText, timeBetweenHuntsText;
-
+    
+    protected TextMeshProUGUI distanceText, sanityText, timeBetweenHuntsText;
     protected float currentSpeed, blinkOutTimeTemp, blinkInTimeTemp, distanceFromPlayer, currentLOSMult = 1f, currentSanity, timeSinceLastHunt;
     protected bool isMale, hasLOS, isMovingForward, isMovingBackward, hasBeenSmudged;
     protected bool isMoving => (isMovingForward || isMovingBackward);
@@ -41,8 +41,13 @@ public class Ghost : MonoBehaviour
     {
         if (hasLOS)
         {
-            currentLOSMult = Mathf.Clamp(currentLOSMult - (((1f - losSpeedGainMultiplier) / losSpeedGainTime) * Time.deltaTime), 0, losSpeedGainMultiplier);
+            currentLOSMult = Mathf.Clamp(currentLOSMult - (((1f - losSpeedGainMultiplier) / losSpeedGainTime) * Time.deltaTime), 1, losSpeedGainMultiplier);
             currentSpeed = losSpeed * currentLOSMult;
+        }
+        else if (currentLOSMult > 1f)
+        {
+            currentLOSMult = Mathf.Clamp(currentLOSMult + (((1f - losSpeedGainMultiplier) / losSpeedDecayTime) * Time.deltaTime), 1, losSpeedGainMultiplier);
+            currentSpeed = walkSpeed * currentLOSMult;
         }
         if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
@@ -69,7 +74,6 @@ public class Ghost : MonoBehaviour
     public virtual void LoseLOS()
     {
         hasLOS = false;
-        currentSpeed /= currentLOSMult;
     }
 
     public void PlayFootsteps()
@@ -84,6 +88,8 @@ public class Ghost : MonoBehaviour
         distanceText.enabled = false;
         sanityText.gameObject.SetActive(false);
         timeBetweenHuntsText.gameObject.SetActive(false);
+        hasLOS = false;
+        currentLOSMult = 1f;
     }
 
     private void Step()
@@ -107,15 +113,15 @@ public class Ghost : MonoBehaviour
 
     protected virtual void Move()
     {
-        if (hasLOS) distanceFromPlayer -= currentSpeed * distanceUpdateFrequence;
-        else distanceFromPlayer += (Random.Range(-currentSpeed, currentSpeed) * distanceUpdateFrequence);
-        if (isMovingForward) distanceFromPlayer -= (gameManager.PlayerSpeed * distanceUpdateFrequence);
-        else if (isMovingBackward) distanceFromPlayer += (gameManager.PlayerSpeed * distanceUpdateFrequence);
+        if (hasLOS) distanceFromPlayer -= currentSpeed * gameManager.DistanceUpdateFrequence;
+        else distanceFromPlayer += (Random.Range(-currentSpeed, currentSpeed) * gameManager.DistanceUpdateFrequence);
+        if (isMovingForward) distanceFromPlayer -= (gameManager.PlayerSpeed * gameManager.DistanceUpdateFrequence);
+        else if (isMovingBackward) distanceFromPlayer += (gameManager.PlayerSpeed * gameManager.DistanceUpdateFrequence);
         distanceText.text = "Distance: " + (Mathf.Round(distanceFromPlayer * 100f) / 100f).ToString() + " m";
 
         if (distanceFromPlayer <= 0.1f) StopHunt();
 
-        Invoke(nameof(Move), distanceUpdateFrequence);
+        Invoke(nameof(Move), gameManager.DistanceUpdateFrequence);
     }
 
     public void StartBlinks()

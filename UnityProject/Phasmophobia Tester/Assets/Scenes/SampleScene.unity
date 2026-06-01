@@ -2033,21 +2033,21 @@ MonoBehaviour:
   - {fileID: 5752419800539536778, guid: ae19c00bdcd1bdb42b44425ecf49492a, type: 3}
   - {fileID: 6500282907439592138, guid: bdfde71b5d7f1a04eae3d85d3534a6eb, type: 3}
   - {fileID: 7292245067804564364, guid: e5c89dec5dde48c44a5bdd2ff1a681c1, type: 3}
-  - {fileID: 7086372536885546628, guid: db458ddfa5cfd1445b93d86037a9772d, type: 3}
-  - {fileID: 2897982637189504430, guid: 2742134278d080940bb3972a0f06dd14, type: 3}
-  - {fileID: 3744916897159310518, guid: 9a11a401e68f4034f9937694247c3607, type: 3}
   - {fileID: 2440546875608593594, guid: 22af382858d2d2c43a3c0e5af47667e1, type: 3}
   - {fileID: 5184717608068076653, guid: 2df9087fb521d644792965a9fcff1b64, type: 3}
+  - {fileID: 1990728619167399034, guid: 9a11a401e68f4034f9937694247c3607, type: 3}
   - {fileID: 74884511617089183, guid: 428934142e8f7b048b0439b03a4d29e2, type: 3}
   - {fileID: 9151678563615235492, guid: 4bbdacbdf5a1c6d458650335e523fc96, type: 3}
   - {fileID: 6848228864729303120, guid: 9a491b9215674254b80b802be61b2f7e, type: 3}
   - {fileID: 4357758248579223424, guid: cb9946a1a2c3f114d9b548e90d8e5246, type: 3}
   - {fileID: 6754663185564652913, guid: 77a3d17525b3c5244a24fc10b2ed7d7b, type: 3}
-  - {fileID: 4691938213523403889, guid: 28f80338a07c4884ab4e469ff3bc49a0, type: 3}
-  - {fileID: 2459662306381832831, guid: 287045b71d6620d42aa3154ccbe0826b, type: 3}
   - {fileID: 376949631269262406, guid: f690b844d93f3f243ae3e53be967b598, type: 3}
+  - {fileID: 4691938213523403889, guid: 28f80338a07c4884ab4e469ff3bc49a0, type: 3}
+  - {fileID: 1726480796695304778, guid: 2742134278d080940bb3972a0f06dd14, type: 3}
+  - {fileID: 2459662306381832831, guid: 287045b71d6620d42aa3154ccbe0826b, type: 3}
   - {fileID: 5575543427094404547, guid: 290900fc62ac39b47ab2f04ba87c3c0f, type: 3}
   - {fileID: 6252390271807711517, guid: 1471074214114ad4999f2dfb88e55ea9, type: 3}
+  - {fileID: 7086372536885546628, guid: db458ddfa5cfd1445b93d86037a9772d, type: 3}
   forcedGhostTypes: []
   ghostNamesMale:
   - Liam
@@ -2158,6 +2158,7 @@ MonoBehaviour:
   gracePeriod: 0
   startingSanity: 100
   playerSpeed: 1.6
+  distanceUpdateFrequence: 1.5
   canvas: {fileID: 880996184}
 --- !u!4 &1817814495
 Transform:
