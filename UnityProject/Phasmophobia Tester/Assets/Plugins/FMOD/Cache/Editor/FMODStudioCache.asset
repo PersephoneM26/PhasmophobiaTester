@@ -15,6 +15,7 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 940728424519193813}
   - {fileID: 6333442547792549900}
+  - {fileID: 8140232391924747873}
   EditorEvents:
   - {fileID: 7698853968939492501}
   EditorParameters: []
@@ -23,7 +24,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 940728424519193813}
   cacheVersion: 131858
-  cacheTime: 639154064372387774
+  cacheTime: 639160849052536574
   SerializableEventsDict:
   - key: event:/Footstep
     index: 0
@@ -94,3 +95,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 339
+--- !u!114 &8140232391924747873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Desktop/Master.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/FMODProject/Build/Desktop/Desktop/Master.bank
+  Name: Desktop/Master
+  StudioPath: 
+  lastModified: 639160849052536574
+  FileSizes: []
+  Exists: 1

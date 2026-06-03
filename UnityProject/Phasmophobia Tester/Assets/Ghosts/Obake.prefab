@@ -50,10 +50,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: m_Name
-      value: Ghost
+      value: Obake
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6041392549120593097}
   m_SourcePrefab: {fileID: 100100000, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+--- !u!1 &4761089534689874243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+  m_PrefabInstance: {fileID: 8223817840020638490}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6041392549120593097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4761089534689874243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cb1926cb446564b82123fc6be84d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  walkSpeed: 1.7
+  losSpeed: 1.7
+  losSpeedGainMultiplier: 1.65
+  losSpeedGainTime: 26
+  losSpeedDecayTime: 65
+  huntSanityThreashold: 50
+  huntCooldown: 25
+  smudgeHuntCooldown: 90
+  footstepAudioRange: 20
+  blinkVisibleMinMax: {x: 0.08, y: 0.3}
+  blinkInvisibleMinMax: {x: 0.1, y: 0.92}
+  perFlickerLengthMinMax: {x: 0.3, y: 1}
+  huntStartingDistanceMinMax: {x: 10, y: 20}
+  ghostGender: 2
+  shapeshiftBlinks: 0c0000001b00000027000000360000003e00000050000000690000007800000084000000
+  maleModels:
+  - {fileID: 21300000, guid: 57a28dc64fbd1d244bbf7c44680a987d, type: 3}
+  - {fileID: 21300000, guid: 373fc9771cfa10b4297f916b7dd93ad9, type: 3}
+  - {fileID: 21300000, guid: beddf048f97e366439813d0869f8dcae, type: 3}
+  - {fileID: 21300000, guid: 7e78a741805835b4e84a59dd0b5efd6e, type: 3}
+  - {fileID: 21300000, guid: bd7d296143a69b0498ebf90afd361b23, type: 3}
+  - {fileID: 21300000, guid: fb301d9810c644b468108dcc572db984, type: 3}
+  - {fileID: 21300000, guid: 0e3eac567c4c43c4088448777c82b540, type: 3}
+  femaleModels:
+  - {fileID: 21300000, guid: bf3c53305a6b0284a9f9b80a21cc4f4b, type: 3}
+  - {fileID: 21300000, guid: cd62cf9e0c9289241a40b7c0076ab8a0, type: 3}
+  - {fileID: 21300000, guid: d9f771e1b1ded5341952081e27f4aac9, type: 3}
+  - {fileID: 21300000, guid: 4f5cbc4281ad8fc4799389c3d02fb7c8, type: 3}

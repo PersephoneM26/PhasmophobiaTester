@@ -94,18 +94,15 @@ MonoBehaviour:
   losSpeed: 1.7
   losSpeedGainMultiplier: 1
   losSpeedGainTime: 26
+  losSpeedDecayTime: 65
   huntSanityThreashold: 50
   huntCooldown: 25
   smudgeHuntCooldown: 90
-  distanceUpdateFrequence: 1.5
   blinkVisibleMinMax: {x: 0.08, y: 0.3}
   blinkInvisibleMinMax: {x: 0.1, y: 0.92}
   perFlickerLengthMinMax: {x: 0.3, y: 1}
   huntStartingDistanceMinMax: {x: 10, y: 20}
   ghostGender: 1
-  distanceText: {fileID: 0}
-  sanityText: {fileID: 0}
-  timeBetweenHuntsText: {fileID: 0}
   walkingHuntSanity: 65
   stillHuntSanity: 45
   awayHuntSanity: 50

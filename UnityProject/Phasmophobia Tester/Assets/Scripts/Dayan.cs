@@ -7,19 +7,20 @@ public class Dayan : Ghost
     {
         if (isMoving & distanceFromPlayer <= 10f)
         {
-            currentSpeed = walkingSpeed;
+            walkSpeed = walkingSpeed;
             huntSanityThreashold = walkingHuntSanity;
         }
         else if (distanceFromPlayer <= 10f & !isMoving)
         {
-            currentSpeed = stillSpeed;
+            walkSpeed = stillSpeed;
             huntSanityThreashold = stillHuntSanity;
         }
         else if (distanceFromPlayer > 10f)
         {
-            currentSpeed = awaySpeed;
+            walkSpeed = awaySpeed;
             huntSanityThreashold = awayHuntSanity;
         }
-            base.Update();
+        losSpeed = walkingSpeed;
+        base.Update();
     }
 }

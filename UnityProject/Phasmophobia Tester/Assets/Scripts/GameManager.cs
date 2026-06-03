@@ -105,4 +105,9 @@ public class GameManager : MonoBehaviour
         ghost.Smudge();
         ghost.StopHunt();
     }
+
+    public void SetGhostModel(Sprite model)
+    {
+        ghostModel.GetComponent<Image>().sprite = model;
+    }
 }

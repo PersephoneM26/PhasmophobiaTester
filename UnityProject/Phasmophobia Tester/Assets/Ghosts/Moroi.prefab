@@ -9,8 +9,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      propertyPath: losSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      propertyPath: walkSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: losSpeedGainMultiplier
-      value: 1
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: 2301801641718435162, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56,8 +64,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moroi
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4012704664306189116}
   m_SourcePrefab: {fileID: 100100000, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+--- !u!1 &2022408134367913868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+  m_PrefabInstance: {fileID: 3180418813894753749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-4012704664306189116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022408134367913868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff50104b77063174693bdb528846b5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  walkSpeed: 1.5
+  losSpeed: 1.5
+  losSpeedGainMultiplier: 1.65
+  losSpeedGainTime: 26
+  losSpeedDecayTime: 65
+  huntSanityThreashold: 50
+  huntCooldown: 25
+  smudgeHuntCooldown: 90
+  blinkVisibleMinMax: {x: 0.08, y: 0.3}
+  blinkInvisibleMinMax: {x: 0.1, y: 0.92}
+  perFlickerLengthMinMax: {x: 0.3, y: 1}
+  huntStartingDistanceMinMax: {x: 10, y: 20}
+  ghostGender: 2
+  speedScaling: 0.083
+  scaleStep: 5

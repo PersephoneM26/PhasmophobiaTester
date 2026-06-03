@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,20 +13,20 @@ public enum ghostGender
 
 public class Ghost : MonoBehaviour
 {
-    private GameManager gameManager;
+    protected GameManager gameManager;
 
-    [SerializeField] protected float walkSpeed, losSpeed, losSpeedGainMultiplier, losSpeedGainTime, losSpeedDecayTime, huntSanityThreashold, huntCooldown, smudgeHuntCooldown;
+    [SerializeField] protected float walkSpeed, losSpeed, losSpeedGainMultiplier, losSpeedGainTime, losSpeedDecayTime, huntSanityThreashold, huntCooldown, smudgeHuntCooldown, footstepAudioRange;
     [SerializeField] protected Vector2 blinkVisibleMinMax, blinkInvisibleMinMax, perFlickerLengthMinMax, huntStartingDistanceMinMax;
     [SerializeField] protected ghostGender ghostGender;
     
     protected TextMeshProUGUI distanceText, sanityText, timeBetweenHuntsText;
-    protected float currentSpeed, blinkOutTimeTemp, blinkInTimeTemp, distanceFromPlayer, currentLOSMult = 1f, currentSanity, timeSinceLastHunt;
+    protected float currentSpeed, blinkOutTimeTemp, blinkInTimeTemp, distanceFromPlayer, currentLOSMult = 1f, currentSanity, timeSinceLastHunt, footstepVolume;
     protected bool isMale, hasLOS, isMovingForward, isMovingBackward, hasBeenSmudged;
     protected bool isMoving => (isMovingForward || isMovingBackward);
 
     public ghostGender GhostGender => ghostGender;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         gameManager = FindAnyObjectByType<GameManager>();
         currentSpeed = walkSpeed;
@@ -49,6 +49,7 @@ public class Ghost : MonoBehaviour
             currentLOSMult = Mathf.Clamp(currentLOSMult + (((1f - losSpeedGainMultiplier) / losSpeedDecayTime) * Time.deltaTime), 1, losSpeedGainMultiplier);
             currentSpeed = walkSpeed * currentLOSMult;
         }
+        else currentSpeed = walkSpeed;
         if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
             isMovingForward = true;
@@ -94,7 +95,7 @@ public class Ghost : MonoBehaviour
 
     private void Step()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(gameManager.Footstep);
+        PlayOneShotWithVolume(gameManager.Footstep, Mathf.Clamp01(1 - (distanceFromPlayer / footstepAudioRange)));
         //Debug.Log(SpeedToStepsPerSecond(currentSpeed));
         Invoke(nameof(Step), SpeedToStepsPerSecond(currentSpeed));
     }
@@ -131,13 +132,13 @@ public class Ghost : MonoBehaviour
     }
 
 
-    public void BlinkOut()
+    protected virtual void BlinkOut()
     {
         gameManager.GhostModel.GetComponent<Image>().enabled = false;
         blinkOutTimeTemp = Random.Range(blinkInvisibleMinMax.x, blinkInvisibleMinMax.y);
         Invoke(nameof(BlinkIn), blinkOutTimeTemp);
     }
-    public void BlinkIn()
+    protected virtual void BlinkIn()
     {
         gameManager.GhostModel.GetComponent<Image>().enabled = true;
         blinkInTimeTemp = Random.Range(blinkVisibleMinMax.x, blinkVisibleMinMax.y);
@@ -173,5 +174,14 @@ public class Ghost : MonoBehaviour
     public void SetGender(bool male)
     {
         isMale = male;
+    }
+
+    protected void PlayOneShotWithVolume(EventReference eventReference, float volume)
+    {
+        var instance = FMODUnity.RuntimeManager.CreateInstance(eventReference);
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+        instance.setVolume(volume);
+        instance.start();
+        instance.release();
     }
 }

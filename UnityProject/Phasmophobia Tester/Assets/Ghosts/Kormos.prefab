@@ -86,6 +86,7 @@ MonoBehaviour:
   losSpeed: 2.21
   losSpeedGainMultiplier: 1.65
   losSpeedGainTime: 26
+  losSpeedDecayTime: 65
   huntSanityThreashold: 50
   huntCooldown: 25
   smudgeHuntCooldown: 90

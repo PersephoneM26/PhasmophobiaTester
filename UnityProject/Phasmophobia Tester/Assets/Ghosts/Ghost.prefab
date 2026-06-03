@@ -52,6 +52,7 @@ MonoBehaviour:
   huntSanityThreashold: 50
   huntCooldown: 25
   smudgeHuntCooldown: 90
+  footstepAudioRange: 20
   blinkVisibleMinMax: {x: 0.08, y: 0.3}
   blinkInvisibleMinMax: {x: 0.1, y: 0.92}
   perFlickerLengthMinMax: {x: 0.3, y: 1}
