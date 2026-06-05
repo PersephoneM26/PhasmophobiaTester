@@ -80,7 +80,7 @@ public class Ghost : MonoBehaviour
         hasLOS = false;
     }
 
-    public void StartHunt()
+    public virtual void StartHunt()
     {
         isHunting = true;
         GetHuntSanity();
@@ -162,7 +162,7 @@ public class Ghost : MonoBehaviour
 
     protected virtual void GetHuntSanity()
     {
-        currentSanity = Mathf.Lerp(0f, Mathf.Min(Mathf.Max(currentSanity - 2f, 0) * 0.95f, huntSanityThreashold), Mathf.Pow(Random.value, 1f/2.75f));
+        currentSanity = Mathf.Lerp(0f, Mathf.Min(Mathf.Max(currentSanity - 2f, 0) * 0.95f, huntSanityThreashold), Mathf.Pow(Random.value, 1f/6f));
         sanityText.text = "Sanity: " + Mathf.RoundToInt(currentSanity).ToString();
         sanityText.gameObject.SetActive(true);
     }
