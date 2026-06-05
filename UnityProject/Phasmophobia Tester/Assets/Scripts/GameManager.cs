@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence, initialHuntSecondsPerSanity;
 
     // Internal ghost variables
-    private bool isMale;
+    private bool isMale, equipmentOn;
     private Ghost ghostPrefab, ghost;
     private GameObject ghostModel;
 
@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     //Misc properties
     public EventReference Footstep => footstep;
     public float GracePeriod => gracePeriod;
+    public bool EquipmentOn => equipmentOn;
 
     private void Start()
     {
@@ -102,6 +103,11 @@ public class GameManager : MonoBehaviour
     {
         ghost.Smudge();
         ghost.StopHunt();
+    }
+
+    public void ToggleEquipment()
+    {
+        equipmentOn = !equipmentOn;
     }
 
     public void SetGhostModel(Sprite model)

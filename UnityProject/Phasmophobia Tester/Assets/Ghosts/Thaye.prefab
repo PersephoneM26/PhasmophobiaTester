@@ -64,8 +64,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thaye
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5530331273383765903}
   m_SourcePrefab: {fileID: 100100000, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+--- !u!1 &5799314013245965520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+  m_PrefabInstance: {fileID: 6938175838794735241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-5530331273383765903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799314013245965520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c5ee1e9db860f4f8576df923b873c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  walkSpeed: 2.75
+  losSpeed: 2.75
+  losSpeedGainMultiplier: 1
+  losSpeedGainTime: 26
+  losSpeedDecayTime: 65
+  huntSanityThreashold: 75
+  huntCooldown: 25
+  smudgeHuntCooldown: 25
+  footstepAudioRange: 20
+  blinkVisibleMinMax: {x: 0.08, y: 0.3}
+  blinkInvisibleMinMax: {x: 0.1, y: 0.92}
+  perFlickerLengthMinMax: {x: 0.3, y: 1}
+  huntStartingDistanceMinMax: {x: 10, y: 20}
+  ghostGender: 2
+  ageTime: 90
+  speedLoss: 0.175
+  huntThreasholdLoss: 6

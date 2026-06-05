@@ -107,7 +107,7 @@ public class Ghost : MonoBehaviour
         Invoke(nameof(Step), gameManager.GracePeriod);
     }
 
-    protected void Step()
+    protected virtual void Step()
     {
         PlayOneShotWithVolume(gameManager.Footstep, Mathf.Clamp01(1 - (distanceFromPlayer / footstepAudioRange)));
         //Debug.Log(SpeedToStepsPerSecond(currentSpeed));
