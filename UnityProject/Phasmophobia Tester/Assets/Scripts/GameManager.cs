@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Sprite> ghostModelsMale = new(), ghostModelsFemale = new();
     [SerializeField] private GameObject ghostModelPrefab;
     [SerializeField] private EventReference footstep;
-    [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence;
+    [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence, initialHuntSecondsPerSanity;
 
     // Internal ghost variables
     private bool isMale;
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public float StartingSanity => startingSanity;
     public float PlayerSpeed => playerSpeed;
     public float DistanceUpdateFrequence => distanceUpdateFrequence;
+    public float InitialHuntSecondsPerSanity => initialHuntSecondsPerSanity;
 
     // Misc variables
     [SerializeField] private Canvas canvas;
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour
 
         // Instantiate ghost
         ghost = Instantiate(ghostPrefab);
+        ghost.SetGender(isMale);
     }
 
     private List<Ghost> GetGenderedGhostList(bool isMale, List<Ghost> allGhosts)
@@ -80,11 +82,7 @@ public class GameManager : MonoBehaviour
 
     public void StartHunt()
     {
-        ghost.PlayFootsteps();
-        ghost.StartBlinks();
-        ghost.StartMoving();
-        ghost.GetTimeSinceLastHunt();
-        ghost.GetHuntSanity();
+        ghost.StartHunt();
     }
 
     public void StopHunt()
