@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: 827f3edc734005f4b8c37a5bb88fc911
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6467475385732595440
+    second: powder-disturbed_0
+  - first:
+      213: -4715421944424359665
+    second: powder-disturbed_1
+  - first:
+      213: -1422101886084832731
+    second: powder-disturbed_2
+  - first:
+      213: -5598633671634131137
+    second: powder-disturbed_3
+  - first:
+      213: 1223899052967943400
+    second: powder-disturbed_4
+  - first:
+      213: -5931066184706750309
+    second: powder-disturbed_5
+  - first:
+      213: 7431198876492408555
+    second: powder-disturbed_6
+  - first:
+      213: 3178367056593874537
+    second: powder-disturbed_7
+  - first:
+      213: -4373318319542684701
+    second: powder-disturbed_8
+  - first:
+      213: 2572691104105120564
+    second: powder-disturbed_9
+  - first:
+      213: 6849975411855102299
+    second: powder-disturbed_10
+  - first:
+      213: 504003345579529253
+    second: powder-disturbed_11
+  - first:
+      213: 577399275156930803
+    second: powder-disturbed_12
+  - first:
+      213: -8488957858204121209
+    second: powder-disturbed_13
+  - first:
+      213: -6885078627752195318
+    second: powder-disturbed_14
+  - first:
+      213: -4474684687894502923
+    second: powder-disturbed_15
+  - first:
+      213: 6238960179075661263
+    second: powder-disturbed_16
+  - first:
+      213: 7825758838201557325
+    second: powder-disturbed_17
+  - first:
+      213: 745568364291941580
+    second: powder-disturbed_18
+  - first:
+      213: 292227281084877664
+    second: powder-disturbed_19
+  - first:
+      213: -7582025329724406447
+    second: powder-disturbed_20
+  - first:
+      213: 6660445536649370900
+    second: powder-disturbed_21
+  - first:
+      213: -5715076329575661652
+    second: powder-disturbed_22
+  - first:
+      213: 7692400476884942902
+    second: powder-disturbed_23
+  - first:
+      213: 116682432646505749
+    second: powder-disturbed_24
+  - first:
+      213: 7422479782973270566
+    second: powder-disturbed_25
+  - first:
+      213: 4234305833860219214
+    second: powder-disturbed_26
+  - first:
+      213: -6126443404002706513
+    second: powder-disturbed_27
+  - first:
+      213: -7537640960828564575
+    second: powder-disturbed_28
+  - first:
+      213: 6940587118792040594
+    second: powder-disturbed_29
+  - first:
+      213: -7516601351689564760
+    second: powder-disturbed_30
+  - first:
+      213: -3092668006913893185
+    second: powder-disturbed_31
+  - first:
+      213: 9140429722760384545
+    second: powder-disturbed_32
+  - first:
+      213: -3171300448840360700
+    second: powder-disturbed_33
+  - first:
+      213: 7913873166622046334
+    second: powder-disturbed_34
+  - first:
+      213: -8039177678177679305
+    second: powder-disturbed_35
+  - first:
+      213: -849504724663096590
+    second: powder-disturbed_36
+  - first:
+      213: -3741630367786176201
+    second: powder-disturbed_37
+  - first:
+      213: 3404588028639410711
+    second: powder-disturbed_38
+  - first:
+      213: -8278254870329263741
+    second: powder-disturbed_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: powder-disturbed_0
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 424
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe7c20e89611c950800000000000000
+      internalID: 6467475385732595440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_1
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 448
+        width: 44
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f09118499b47f8eb0800000000000000
+      internalID: -4715421944424359665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_2
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 454
+        width: 46
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52220858edda34ce0800000000000000
+      internalID: -1422101886084832731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_3
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 450
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f37e4b6a658ad42b0800000000000000
+      internalID: -5598633671634131137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_4
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 443
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ec571544b92cf010800000000000000
+      internalID: 1223899052967943400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_5
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 388
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b980939aabe90bda0800000000000000
+      internalID: -5931066184706750309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_6
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 376
+        width: 43
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6ac98810ce02760800000000000000
+      internalID: 7431198876492408555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_7
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 386
+        width: 43
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96ee41e8ff3db1c20800000000000000
+      internalID: 3178367056593874537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_8
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 382
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e333f1c82ade43c0800000000000000
+      internalID: -4373318319542684701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_9
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 341
+        width: 46
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4334ef0bde804b320800000000000000
+      internalID: 2572691104105120564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_10
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 318
+        width: 44
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5198c72850001f50800000000000000
+      internalID: 6849975411855102299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_11
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 337
+        width: 38
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52450ea5f549ef600800000000000000
+      internalID: 504003345579529253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_12
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 319
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f00c41e495530800800000000000000
+      internalID: 577399275156930803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_13
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 345
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7878b7cedc9213a80800000000000000
+      internalID: -8488957858204121209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_14
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 341
+        width: 41
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b423e77794370a0800000000000000
+      internalID: -6885078627752195318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_15
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 317
+        width: 49
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f12b28fbf9b6e1c0800000000000000
+      internalID: -4474684687894502923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_16
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 278
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcdbc993a3d359650800000000000000
+      internalID: 6238960179075661263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_17
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 304
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d41a0e0633eaa9c60800000000000000
+      internalID: 7825758838201557325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_18
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 289
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc4e3652a7ac85a00800000000000000
+      internalID: 745568364291941580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_19
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 232
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06b0eb2f9233e0400800000000000000
+      internalID: 292227281084877664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_20
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 254
+        width: 36
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15543c7422c37c690800000000000000
+      internalID: -7582025329724406447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_21
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 245
+        width: 43
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41d52d15de7ae6c50800000000000000
+      internalID: 6660445536649370900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_22
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 253
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caf3667ab58ffa0b0800000000000000
+      internalID: -5715076329575661652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_23
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 238
+        width: 90
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 630c5c64a75e0ca60800000000000000
+      internalID: 7692400476884942902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_24
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 263
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5156c65ed0a8e9100800000000000000
+      internalID: 116682432646505749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_25
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 169
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62ae3a06902f10760800000000000000
+      internalID: 7422479782973270566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_26
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 188
+        width: 33
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e414a99b8b643ca30800000000000000
+      internalID: 4234305833860219214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_27
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 188
+        width: 45
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fab32efee208afaa0800000000000000
+      internalID: -6126443404002706513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_28
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 184
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab11657b7be46790800000000000000
+      internalID: -7537640960828564575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_29
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 181
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2906044363be15060800000000000000
+      internalID: 6940587118792040594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_30
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 127
+        width: 69
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad825235eaafa790800000000000000
+      internalID: -7516601351689564760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_31
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 120
+        width: 71
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc9ea755d2a415d0800000000000000
+      internalID: -3092668006913893185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_32
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 86
+        width: 83
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1201e8f976459de70800000000000000
+      internalID: 9140429722760384545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_33
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 129
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d55d64b074df3d0800000000000000
+      internalID: -3171300448840360700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_34
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 116
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e78b00e27b9b3dd60800000000000000
+      internalID: 7913873166622046334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_35
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 114
+        width: 55
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73848fdbe7a1f6090800000000000000
+      internalID: -8039177678177679305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_36
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 89
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2faa07b24f3f534f0800000000000000
+      internalID: -849504724663096590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_37
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 73
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7317a47210f031cc0800000000000000
+      internalID: -3741630367786176201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_38
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 92
+        width: 70
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a799516c68f3f20800000000000000
+      internalID: 3404588028639410711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powder-disturbed_39
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 75
+        width: 47
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38970e53e0bbd1d80800000000000000
+      internalID: -8278254870329263741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      powder-disturbed_0: 6467475385732595440
+      powder-disturbed_1: -4715421944424359665
+      powder-disturbed_10: 6849975411855102299
+      powder-disturbed_11: 504003345579529253
+      powder-disturbed_12: 577399275156930803
+      powder-disturbed_13: -8488957858204121209
+      powder-disturbed_14: -6885078627752195318
+      powder-disturbed_15: -4474684687894502923
+      powder-disturbed_16: 6238960179075661263
+      powder-disturbed_17: 7825758838201557325
+      powder-disturbed_18: 745568364291941580
+      powder-disturbed_19: 292227281084877664
+      powder-disturbed_2: -1422101886084832731
+      powder-disturbed_20: -7582025329724406447
+      powder-disturbed_21: 6660445536649370900
+      powder-disturbed_22: -5715076329575661652
+      powder-disturbed_23: 7692400476884942902
+      powder-disturbed_24: 116682432646505749
+      powder-disturbed_25: 7422479782973270566
+      powder-disturbed_26: 4234305833860219214
+      powder-disturbed_27: -6126443404002706513
+      powder-disturbed_28: -7537640960828564575
+      powder-disturbed_29: 6940587118792040594
+      powder-disturbed_3: -5598633671634131137
+      powder-disturbed_30: -7516601351689564760
+      powder-disturbed_31: -3092668006913893185
+      powder-disturbed_32: 9140429722760384545
+      powder-disturbed_33: -3171300448840360700
+      powder-disturbed_34: 7913873166622046334
+      powder-disturbed_35: -8039177678177679305
+      powder-disturbed_36: -849504724663096590
+      powder-disturbed_37: -3741630367786176201
+      powder-disturbed_38: 3404588028639410711
+      powder-disturbed_39: -8278254870329263741
+      powder-disturbed_4: 1223899052967943400
+      powder-disturbed_5: -5931066184706750309
+      powder-disturbed_6: 7431198876492408555
+      powder-disturbed_7: 3178367056593874537
+      powder-disturbed_8: -4373318319542684701
+      powder-disturbed_9: 2572691104105120564
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

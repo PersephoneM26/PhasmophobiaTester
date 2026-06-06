@@ -1,38 +1,44 @@
 using FMODUnity;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Windows;
 
 public class GameManager : MonoBehaviour
 {
-    // Serialized ghost variables
+    // Serialized variables
     [SerializeField] private List<Ghost> ghostTypes = new(), forcedGhostTypes = new();
     [SerializeField] private List<string> ghostNamesMale, ghostNamesFemale, ghostLastNames;
     [SerializeField] private List<Sprite> ghostModelsMale = new(), ghostModelsFemale = new();
-    [SerializeField] private GameObject ghostModelPrefab;
+    [SerializeField] private GameObject ghostModelPrefab, saltPrefab, disturbedSaltPrefab, saltParent;
     [SerializeField] private EventReference footstep;
-    [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence, initialHuntSecondsPerSanity;
+    [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence, initialHuntSecondsPerSanity, totalSalts;
+    [SerializeField] private Canvas canvas;
 
-    // Internal ghost variables
+    // Internal variables
     private bool isMale, equipmentOn;
     private Ghost ghostPrefab, ghost;
     private GameObject ghostModel;
+    private Dictionary<int, bool> saltPositions = new Dictionary<int, bool>();
+    private float saltsPlaced;
 
-    // Ghost properties
+    // properties
     public GameObject GhostModel => ghostModel;
     public float StartingSanity => startingSanity;
-    public float PlayerSpeed => playerSpeed;
-    public float DistanceUpdateFrequence => distanceUpdateFrequence;
     public float InitialHuntSecondsPerSanity => initialHuntSecondsPerSanity;
-
-    // Misc variables
-    [SerializeField] private Canvas canvas;
-
-    //Misc properties
+    public Dictionary<int, bool> SaltPositions => saltPositions;
+    public GameObject SaltParent => saltParent;
+    public float DistanceUpdateFrequence => distanceUpdateFrequence;
+    public float PlayerSpeed => playerSpeed;
     public EventReference Footstep => footstep;
     public float GracePeriod => gracePeriod;
     public bool EquipmentOn => equipmentOn;
+    public GameObject DisturbedSaltPrefab => disturbedSaltPrefab;
+
+    // Misc variables
+
 
     private void Start()
     {
@@ -113,5 +119,28 @@ public class GameManager : MonoBehaviour
     public void SetGhostModel(Sprite model)
     {
         ghostModel.GetComponent<Image>().sprite = model;
+    }
+
+    public void SetSaltPositions(int pos, bool isStepped)
+    {
+        saltPositions[pos] = isStepped;
+    }
+
+    public void PlaceSalt(Transform t)
+    {
+        if (!int.TryParse(Regex.Replace(t.name, @"[^\d]", ""), out int position))
+        {
+            Debug.LogError("Couldnt read any numbers in button " + t.name);
+            return;
+        }
+        if (saltPositions.ContainsKey(position))
+        {
+            Debug.Log("contains key " + position.ToString());
+            return;
+        }
+        GameObject s = Instantiate(saltPrefab, t.position, Quaternion.identity, saltParent.transform);
+        s.name = position.ToString();
+        saltPositions.Add(position, true);
+        saltsPlaced++;
     }
 }

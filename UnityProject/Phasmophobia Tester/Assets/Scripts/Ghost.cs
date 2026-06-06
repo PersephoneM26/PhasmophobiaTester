@@ -1,4 +1,5 @@
 using FMODUnity;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,9 +21,11 @@ public class Ghost : MonoBehaviour
     [SerializeField] protected ghostGender ghostGender;
     
     protected TextMeshProUGUI distanceText, sanityText, timeBetweenHuntsText;
-    protected float currentSpeed, blinkOutTimeTemp, blinkInTimeTemp, distanceFromPlayer, currentLOSMult = 1f, currentSanity, timeSinceLastHunt, footstepVolume, totalContractTime;
+    protected float currentSpeed, blinkOutTimeTemp, blinkInTimeTemp, distanceFromPlayer, previousDistanceFromPlayer, currentLOSMult = 1f, currentSanity, timeSinceLastHunt, footstepVolume, totalContractTime;
     protected bool isMale, hasLOS, isMovingForward, isMovingBackward, hasBeenSmudged, isHunting, isFirstHunt;
     protected string secondsRemainderSinceLastHunt;
+    protected List<int> saltsSteppedIn = new List<int>();
+
     protected bool isMoving => (isMovingForward || isMovingBackward);
 
     public ghostGender GhostGender => ghostGender;
@@ -80,6 +83,20 @@ public class Ghost : MonoBehaviour
         hasLOS = false;
     }
 
+    protected virtual void StepInSalt(int position)
+    {
+        GameObject oldSalt = gameManager.SaltParent.transform.Find(position.ToString()).gameObject;
+        if (oldSalt == null)
+        {
+            Debug.LogError("Couldnt find old salt with name " + position.ToString());
+            return;
+        }
+        GameObject newSalt = Instantiate(gameManager.DisturbedSaltPrefab, oldSalt.transform.position, Quaternion.identity, gameManager.SaltParent.transform);
+        newSalt.name = position.ToString() + " Disturbed";
+        Destroy(oldSalt);
+        gameManager.SetSaltPositions(position, false);
+    }
+
     public virtual void StartHunt()
     {
         isHunting = true;
@@ -128,13 +145,29 @@ public class Ghost : MonoBehaviour
 
     protected virtual void Move()
     {
+        previousDistanceFromPlayer = distanceFromPlayer;
         if (hasLOS) distanceFromPlayer -= currentSpeed * gameManager.DistanceUpdateFrequence;
         else distanceFromPlayer += (Random.Range(-currentSpeed, currentSpeed) * gameManager.DistanceUpdateFrequence);
         if (isMovingForward) distanceFromPlayer -= (gameManager.PlayerSpeed * gameManager.DistanceUpdateFrequence);
         else if (isMovingBackward) distanceFromPlayer += (gameManager.PlayerSpeed * gameManager.DistanceUpdateFrequence);
         distanceText.text = "Distance: " + (Mathf.Round(distanceFromPlayer * 100f) / 100f).ToString() + " m";
 
-        if (distanceFromPlayer <= 0.1f) StopHunt();
+        if (distanceFromPlayer <= 0.1f)
+        {
+            StopHunt();
+            return;
+        }
+
+        saltsSteppedIn.Clear();
+        foreach (int i in gameManager.SaltPositions.Keys)
+        {
+            if (gameManager.SaltPositions[i] == false) continue;
+            if ((distanceFromPlayer <= i && previousDistanceFromPlayer > i) || distanceFromPlayer >= i && previousDistanceFromPlayer < i) saltsSteppedIn.Add(i);
+        }
+        foreach (int i in saltsSteppedIn)
+        {
+            StepInSalt(i);
+        }
 
         Invoke(nameof(Move), gameManager.DistanceUpdateFrequence);
     }

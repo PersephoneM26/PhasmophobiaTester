@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class Kormos : Ghost
@@ -19,10 +20,10 @@ public class Kormos : Ghost
 
     public override void GainLOS()
     {
-        
+        // my eyes! im binndddddd!!
     }
     public override void LoseLOS()
     {
-        
+        // mothing to ... *see*  here
     }
 }
