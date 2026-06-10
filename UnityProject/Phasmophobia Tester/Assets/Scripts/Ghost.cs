@@ -20,10 +20,10 @@ public class Ghost : MonoBehaviour
     [SerializeField] protected Vector2 blinkVisibleMinMax, blinkInvisibleMinMax, perFlickerLengthMinMax, huntStartingDistanceMinMax;
     [SerializeField] protected ghostGender ghostGender;
     
-    protected TextMeshProUGUI distanceText, sanityText, timeBetweenHuntsText;
+    protected TextMeshProUGUI distanceText, sanityText, timeBetweenHuntsText, contractTimeText;
     protected float currentSpeed, blinkOutTimeTemp, blinkInTimeTemp, distanceFromPlayer, previousDistanceFromPlayer, currentLOSMult = 1f, currentSanity, timeSinceLastHunt, footstepVolume, totalContractTime;
     protected bool isMale, hasLOS, isMovingForward, isMovingBackward, hasBeenSmudged, isHunting, isFirstHunt;
-    protected string secondsRemainderSinceLastHunt;
+    protected string secondsRemainderSinceLastHunt, contractSecondsRemainder;
     protected List<int> saltsSteppedIn = new List<int>();
 
     protected bool isMoving => (isMovingForward || isMovingBackward);
@@ -71,6 +71,9 @@ public class Ghost : MonoBehaviour
             isMovingForward = false;
         }
         if (isHunting) totalContractTime += Time.deltaTime;
+        contractSecondsRemainder = Mathf.RoundToInt(timeSinceLastHunt % 60f).ToString();
+        if (contractSecondsRemainder.Length == 1) contractSecondsRemainder = "0" + contractSecondsRemainder;
+        gameManager.SetContractTimeText((Mathf.RoundToInt(totalContractTime) / 60).ToString() + ":" + contractSecondsRemainder);
     }
 
     public virtual void GainLOS()
@@ -81,6 +84,21 @@ public class Ghost : MonoBehaviour
     public virtual void LoseLOS()
     {
         hasLOS = false;
+    }
+
+    public void CheckTemperature()
+    {
+
+    }
+
+    public void CheckSanity()
+    {
+        sanityText.gameObject.SetActive(true);
+    }
+
+    public void CheckHuntTime()
+    {
+        timeBetweenHuntsText.gameObject.SetActive(true);
     }
 
     protected virtual void StepInSalt(int position)
@@ -105,6 +123,7 @@ public class Ghost : MonoBehaviour
         PlayFootsteps();
         StartBlinks();
         StartMoving();
+        Invoke(nameof(StopHunt), gameManager.HuntDuration + Random.Range(-5f, 5f));
     }
 
     public void StopHunt()
@@ -197,7 +216,6 @@ public class Ghost : MonoBehaviour
     {
         currentSanity = Mathf.Lerp(0f, Mathf.Min(Mathf.Max(currentSanity - 2f, 0) * 0.95f, huntSanityThreashold), Mathf.Pow(Random.value, 1f/6f));
         sanityText.text = "Sanity: " + Mathf.RoundToInt(currentSanity).ToString();
-        sanityText.gameObject.SetActive(true);
     }
 
     private void GetTimeSinceLastHunt()
@@ -240,11 +258,10 @@ public class Ghost : MonoBehaviour
         secondsRemainderSinceLastHunt = Mathf.RoundToInt(timeSinceLastHunt % 60f).ToString();
         if (secondsRemainderSinceLastHunt.Length == 1) secondsRemainderSinceLastHunt = "0" + secondsRemainderSinceLastHunt;
         timeBetweenHuntsText.text = "Time since last hunt: " + (Mathf.RoundToInt(timeSinceLastHunt) / 60).ToString() + ":" + secondsRemainderSinceLastHunt;
-        timeBetweenHuntsText.gameObject.SetActive(true);
         totalContractTime += timeSinceLastHunt;
     }
 
-    public void Smudge()
+    public virtual void Smudge()
     {
         hasBeenSmudged = true;
     }

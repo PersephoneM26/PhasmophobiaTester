@@ -50,10 +50,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: m_Name
-      value: Ghost
+      value: Gallu
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 572403139968971615}
   m_SourcePrefab: {fileID: 100100000, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+--- !u!1 &5930917192100832697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+  m_PrefabInstance: {fileID: 7096774400008732640}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &572403139968971615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5930917192100832697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f0dda2fa5e1784cb07fa4d049aa9ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  walkSpeed: 1.7
+  losSpeed: 1.7
+  losSpeedGainMultiplier: 1.65
+  losSpeedGainTime: 26
+  losSpeedDecayTime: 65
+  huntSanityThreashold: 50
+  huntCooldown: 25
+  smudgeHuntCooldown: 90
+  footstepAudioRange: 20
+  blinkVisibleMinMax: {x: 0.08, y: 0.3}
+  blinkInvisibleMinMax: {x: 0.1, y: 0.92}
+  perFlickerLengthMinMax: {x: 0.3, y: 1}
+  huntStartingDistanceMinMax: {x: 10, y: 20}
+  ghostGender: 2
+  calmSpeed: 1.36
+  calmThreashold: 40
+  aggressiveSpeed: 1.955
+  aggressiveThreashold: 60
+  normalSpeed: 1.7
+  normalthreshold: 50

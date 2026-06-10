@@ -12,13 +12,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Ghost> ghostTypes = new(), forcedGhostTypes = new();
     [SerializeField] private List<string> ghostNamesMale, ghostNamesFemale, ghostLastNames;
     [SerializeField] private List<Sprite> ghostModelsMale = new(), ghostModelsFemale = new();
-    [SerializeField] private GameObject ghostModelPrefab, saltPrefab, disturbedSaltPrefab, saltParent;
+    [SerializeField] private GameObject ghostModelPrefab, saltPrefab, disturbedSaltPrefab, saltParent, saltButtonsParent;
+    [SerializeField] private TextMeshProUGUI saltText, contractTimeText;
     [SerializeField] private EventReference footstep;
-    [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence, initialHuntSecondsPerSanity, totalSalts;
+    [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence, initialHuntSecondsPerSanity, totalSalts, huntDuration;
     [SerializeField] private Canvas canvas;
 
     // Internal variables
-    private bool isMale, equipmentOn;
+    private bool isMale, equipmentOn, isPlacingSalt;
     private Ghost ghostPrefab, ghost;
     private GameObject ghostModel;
     private Dictionary<int, bool> saltPositions = new Dictionary<int, bool>();
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
     public float GracePeriod => gracePeriod;
     public bool EquipmentOn => equipmentOn;
     public GameObject DisturbedSaltPrefab => disturbedSaltPrefab;
+    public float HuntDuration => huntDuration;
 
     // Misc variables
 
@@ -116,6 +118,26 @@ public class GameManager : MonoBehaviour
         equipmentOn = !equipmentOn;
     }
 
+    public void CheckTime()
+    {
+        ghost.CheckHuntTime();
+    }
+
+    public void SetContractTimeText(string text)
+    {
+        contractTimeText.text = text;
+    }
+
+    public void CheckTemperature()
+    {
+        ghost.CheckTemperature();
+    }
+
+    public void CheckSanity()
+    {
+        ghost.CheckSanity();
+    }
+
     public void SetGhostModel(Sprite model)
     {
         ghostModel.GetComponent<Image>().sprite = model;
@@ -126,8 +148,40 @@ public class GameManager : MonoBehaviour
         saltPositions[pos] = isStepped;
     }
 
+    public void EnableSaltPlacement()
+    {
+        if (saltsPlaced >= totalSalts)
+        {
+            Debug.Log("Already placed max salts");
+            return;
+        }
+        foreach (Button b in saltButtonsParent.GetComponentsInChildren<Button>())
+        {
+            ColorBlock cb = b.colors;
+            cb.normalColor = Color.forestGreen;
+            cb.highlightedColor = Color.springGreen;
+            cb.selectedColor = Color.springGreen;
+            b.colors = cb;
+        }
+        isPlacingSalt = true;
+    }
+
     public void PlaceSalt(Transform t)
     {
+        if (!isPlacingSalt) return;
+        foreach (Button b in saltParent.GetComponentsInChildren<Button>())
+        {
+            ColorBlock cb = b.colors;
+            cb.selectedColor = Color.white;
+            cb.normalColor = Color.white;
+            cb.highlightedColor = Color.white;
+            b.colors = cb;
+        }
+        if (saltsPlaced >= totalSalts)
+        {
+            Debug.Log("Already placed max salts");
+            return;
+        }
         if (!int.TryParse(Regex.Replace(t.name, @"[^\d]", ""), out int position))
         {
             Debug.LogError("Couldnt read any numbers in button " + t.name);
@@ -142,5 +196,7 @@ public class GameManager : MonoBehaviour
         s.name = position.ToString();
         saltPositions.Add(position, true);
         saltsPlaced++;
+        saltText.text = Mathf.RoundToInt(totalSalts - saltsPlaced).ToString() + "/" + Mathf.RoundToInt(totalSalts).ToString() + " Salts Remaining";
+        isPlacingSalt = false;
     }
 }
