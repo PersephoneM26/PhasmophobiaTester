@@ -1,8 +1,10 @@
+using FMOD.Studio;
 using FMODUnity;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public enum ghostGender
@@ -18,6 +20,7 @@ public class Ghost : MonoBehaviour
     protected GameManager gameManager;
 
     [SerializeField] protected float walkSpeed, losSpeed, losSpeedGainMultiplier, losSpeedGainTime, losSpeedDecayTime, huntSanityThreashold, huntCooldown, smudgeHuntCooldown, footstepAudioRange, maxTempSwing;
+    [SerializeField] protected float eqipmentDetectionRange, equipmentDisruptionRange;
     [SerializeField] protected Vector2 blinkVisibleMinMax, blinkInvisibleMinMax, perFlickerLengthMinMax, huntStartingDistanceMinMax, huntDurationRandomMinMax, tempMinMax;
     [SerializeField] protected ghostGender ghostGender;
     
@@ -27,6 +30,7 @@ public class Ghost : MonoBehaviour
     protected bool isMale, hasLOS, isMovingForward, isMovingBackward, hasBeenSmudged, isHunting, isFirstHunt;
     protected string secondsRemainderSinceLastHunt, contractSecondsRemainder;
     protected List<int> saltsSteppedIn = new List<int>();
+    protected EventInstance staticSFX;
 
     protected bool isMoving => (isMovingForward || isMovingBackward);
     protected float tempMinMaxAvg => (tempMinMax.x + tempMinMax.y) / 2f;
@@ -70,6 +74,11 @@ public class Ghost : MonoBehaviour
         currentTemp = tempMinMax.y * Random.Range(0.9f, 1f);
         targetTemp = Mathf.RoundToInt(Random.Range(tempMinMax.x, tempMinMax.y));
         isFirstHunt = true;
+        staticSFX = RuntimeManager.CreateInstance(gameManager.EquipmentDisruptionSFX);
+        staticSFX.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+        staticSFX.setVolume(1f);
+        staticSFX.start();
+        staticSFX.release();
     }
 
     protected virtual void Update()
@@ -85,7 +94,7 @@ public class Ghost : MonoBehaviour
             currentSpeed = walkSpeed * currentLOSMult;
         }
         else currentSpeed = walkSpeed;
-        if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        /*if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
             isMovingForward = true;
             isMovingBackward = false;
@@ -99,7 +108,7 @@ public class Ghost : MonoBehaviour
         {
             isMovingBackward = false;
             isMovingForward = false;
-        }
+        }*/
         totalContractTime += Time.deltaTime;
         EvaluateTemperature();
     }
@@ -191,6 +200,7 @@ public class Ghost : MonoBehaviour
     protected virtual void Move()
     {
         previousDistanceFromPlayer = distanceFromPlayer;
+        if (gameManager.EquipmentOn && distanceFromPlayer <= eqipmentDetectionRange) hasLOS = true;
         if (hasLOS) distanceFromPlayer -= currentSpeed * gameManager.DistanceUpdateFrequence;
         else distanceFromPlayer += (Random.Range(-currentSpeed, currentSpeed) * gameManager.DistanceUpdateFrequence);
         if (isMovingForward) distanceFromPlayer -= (gameManager.PlayerSpeed * gameManager.DistanceUpdateFrequence);
@@ -215,6 +225,26 @@ public class Ghost : MonoBehaviour
         }
 
         Invoke(nameof(Move), gameManager.DistanceUpdateFrequence);
+    }
+
+    public void StartMoveForward()
+    {
+        isMovingForward = true;
+    }
+
+    public void StopMovingForward()
+    {
+        isMovingForward = false;
+    }
+
+    public void StartMovingBackward()
+    {
+        isMovingBackward = true;
+    }
+
+    public void StopMovingBackward()
+    {
+        isMovingBackward = false;
     }
 
     protected void StartBlinks()

@@ -92,6 +92,8 @@ MonoBehaviour:
   smudgeHuntCooldown: 90
   footstepAudioRange: 20
   maxTempSwing: 6
+  eqipmentDetectionRange: 7.5
+  equipmentDisruptionRange: 10
   blinkVisibleMinMax: {x: 0.08, y: 0.3}
   blinkInvisibleMinMax: {x: 0.1, y: 0.92}
   perFlickerLengthMinMax: {x: 0.3, y: 1}

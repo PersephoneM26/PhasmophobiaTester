@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: m_Name
-      value: Ghost
+      value: Yurei
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

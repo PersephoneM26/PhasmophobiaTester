@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Sprite> ghostModelsMale = new(), ghostModelsFemale = new();
     [SerializeField] private GameObject ghostModelPrefab, saltPrefab, disturbedSaltPrefab, saltParent, saltButtonsParent, sliderPrefab, saltCancelButton, defaultGhostPrefab;
     [SerializeField] private TextMeshProUGUI saltText, contractTimeText, currentSanityText, currentTemperatureText;
-    [SerializeField] private EventReference footstep;
+    [SerializeField] private EventReference footstep, equipmentDisruptionSFX;
     [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence, initialHuntSecondsPerSanity, totalSalts, huntDuration, statsVisibleDuration;
     [SerializeField] private Canvas canvas;
 
@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     public float DistanceUpdateFrequence => distanceUpdateFrequence;
     public float PlayerSpeed => playerSpeed;
     public EventReference Footstep => footstep;
+    public EventReference EquipmentDisruptionSFX => equipmentDisruptionSFX;
     public float GracePeriod => gracePeriod;
     public bool EquipmentOn => equipmentOn;
     public GameObject DisturbedSaltPrefab => disturbedSaltPrefab;
@@ -245,6 +246,26 @@ public class GameManager : MonoBehaviour
         saltPositions.Add(position, true);
         saltsPlaced++;
         saltText.text = Mathf.RoundToInt(totalSalts - saltsPlaced).ToString() + "/" + Mathf.RoundToInt(totalSalts).ToString() + " Salts Remaining";
+    }
+
+    public void StartMoveForward()
+    {
+        ghost.StartMoveForward();
+    }
+
+    public void StopMovingForward()
+    {
+        ghost.StopMovingForward();
+    }
+
+    public void StartMovingBackward()
+    {
+        ghost.StartMovingBackward();
+    }
+
+    public void StopMovingBackward()
+    {
+        ghost.StopMovingBackward();
     }
 
     public string FloatToTimeString(float time)

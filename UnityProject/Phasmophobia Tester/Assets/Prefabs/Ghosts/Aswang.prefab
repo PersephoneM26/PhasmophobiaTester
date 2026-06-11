@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: losSpeed
-      value: 1.5
+      value: 1.53
       objectReference: {fileID: 0}
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: ghostName
@@ -23,6 +23,10 @@ PrefabInstance:
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: ghostGender
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      propertyPath: maxTempSwing
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
       propertyPath: losSpeedGainTime
