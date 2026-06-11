@@ -12223,6 +12223,13 @@ MonoBehaviour:
       Data3: 109766024
       Data4: 895789327
     Path: event:/Footstep
+  equipmentDisruptionSFX:
+    Guid:
+      Data1: -997638482
+      Data2: 1214042953
+      Data3: 109766024
+      Data4: 895789327
+    Path: event:/Footstep
   gracePeriod: 0
   startingSanity: 100
   playerSpeed: 1.6
