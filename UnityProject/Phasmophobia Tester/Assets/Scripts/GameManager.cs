@@ -1,5 +1,7 @@
 using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
@@ -12,10 +14,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Ghost> ghostTypes = new(), forcedGhostTypes = new();
     [SerializeField] private List<string> ghostNamesMale, ghostNamesFemale, ghostLastNames;
     [SerializeField] private List<Sprite> ghostModelsMale = new(), ghostModelsFemale = new();
-    [SerializeField] private GameObject ghostModelPrefab, saltPrefab, disturbedSaltPrefab, saltParent, saltButtonsParent;
-    [SerializeField] private TextMeshProUGUI saltText, contractTimeText;
+    [SerializeField] private GameObject ghostModelPrefab, saltPrefab, disturbedSaltPrefab, saltParent, saltButtonsParent, sliderPrefab, saltCancelButton, defaultGhostPrefab;
+    [SerializeField] private TextMeshProUGUI saltText, contractTimeText, currentSanityText, currentTemperatureText;
     [SerializeField] private EventReference footstep;
-    [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence, initialHuntSecondsPerSanity, totalSalts, huntDuration;
+    [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence, initialHuntSecondsPerSanity, totalSalts, huntDuration, statsVisibleDuration;
     [SerializeField] private Canvas canvas;
 
     // Internal variables
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
     private GameObject ghostModel;
     private Dictionary<int, bool> saltPositions = new Dictionary<int, bool>();
     private float saltsPlaced;
+    private Coroutine showTimeCoroutine, showTempCoroutine, showSanityCoroutine;
 
     // properties
     public GameObject GhostModel => ghostModel;
@@ -37,7 +40,9 @@ public class GameManager : MonoBehaviour
     public float GracePeriod => gracePeriod;
     public bool EquipmentOn => equipmentOn;
     public GameObject DisturbedSaltPrefab => disturbedSaltPrefab;
+    public GameObject SliderPrefab => sliderPrefab;
     public float HuntDuration => huntDuration;
+    public GameObject DefaultGhostPrefab => defaultGhostPrefab;
 
     // Misc variables
 
@@ -120,22 +125,57 @@ public class GameManager : MonoBehaviour
 
     public void CheckTime()
     {
-        ghost.CheckHuntTime();
+        if (showTimeCoroutine != null) StopCoroutine(showTimeCoroutine);
+        showTimeCoroutine = StartCoroutine(ShowTime(Time.time));
     }
 
-    public void SetContractTimeText(string text)
+    private IEnumerator ShowTime(float startTime)
     {
-        contractTimeText.text = text;
+        contractTimeText.gameObject.SetActive(true);
+        while (Time.time - startTime < statsVisibleDuration)
+        {
+            contractTimeText.text = "Total time in contract: " + FloatToTimeString(ghost.TotalContractTime);
+            yield return new WaitForEndOfFrame();
+        }
+
+        contractTimeText.gameObject.SetActive(false);
+        yield return null;
     }
 
     public void CheckTemperature()
     {
-        ghost.CheckTemperature();
+        if (showTempCoroutine != null) StopCoroutine(showTempCoroutine);
+        showTempCoroutine = StartCoroutine(ShowTemperature(Time.time));
+    }
+
+    private IEnumerator ShowTemperature(float startTime)
+    {
+        currentTemperatureText.gameObject.SetActive(true);
+        currentTemperatureText.text = "Current Temperature: " + Mathf.RoundToInt(ghost.CurrentTemp).ToString() + "°C";
+        while (Time.time - startTime < statsVisibleDuration)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        currentTemperatureText.gameObject.SetActive(false);
+        yield return null;
     }
 
     public void CheckSanity()
     {
-        ghost.CheckSanity();
+       if (showSanityCoroutine != null) StopCoroutine(showSanityCoroutine);
+        showSanityCoroutine = StartCoroutine(ShowSanity(Time.time));
+    }
+
+    private IEnumerator ShowSanity(float startTime)
+    {
+        currentSanityText.gameObject.SetActive(true);
+        currentSanityText.text = "Current Sanity: " + Mathf.RoundToInt(ghost.CurrentSanity).ToString() + "%";
+        while (Time.time - startTime < statsVisibleDuration)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        currentSanityText.gameObject.SetActive(false);
+        yield return null;
     }
 
     public void SetGhostModel(Sprite model)
@@ -163,13 +203,13 @@ public class GameManager : MonoBehaviour
             cb.selectedColor = Color.springGreen;
             b.colors = cb;
         }
+        saltCancelButton.SetActive(true);
         isPlacingSalt = true;
     }
 
-    public void PlaceSalt(Transform t)
+    public void CancelPlacingSalt()
     {
-        if (!isPlacingSalt) return;
-        foreach (Button b in saltParent.GetComponentsInChildren<Button>())
+        foreach (Button b in saltButtonsParent.GetComponentsInChildren<Button>())
         {
             ColorBlock cb = b.colors;
             cb.selectedColor = Color.white;
@@ -177,6 +217,14 @@ public class GameManager : MonoBehaviour
             cb.highlightedColor = Color.white;
             b.colors = cb;
         }
+        saltCancelButton.SetActive(false);
+        isPlacingSalt = false;
+    }
+
+    public void PlaceSalt(Transform t)
+    {
+        if (!isPlacingSalt) return;
+        CancelPlacingSalt();
         if (saltsPlaced >= totalSalts)
         {
             Debug.Log("Already placed max salts");
@@ -197,6 +245,12 @@ public class GameManager : MonoBehaviour
         saltPositions.Add(position, true);
         saltsPlaced++;
         saltText.text = Mathf.RoundToInt(totalSalts - saltsPlaced).ToString() + "/" + Mathf.RoundToInt(totalSalts).ToString() + " Salts Remaining";
-        isPlacingSalt = false;
+    }
+
+    public string FloatToTimeString(float time)
+    {
+        string seconds = Mathf.RoundToInt(time % 60f).ToString();
+        if (seconds.Length == 1) seconds = "0" + seconds;
+        return (Mathf.RoundToInt(time) / 60).ToString() + ":" + seconds;
     }
 }

@@ -98,10 +98,13 @@ MonoBehaviour:
   huntSanityThreashold: 50
   huntCooldown: 25
   smudgeHuntCooldown: 90
+  footstepAudioRange: 0
   blinkVisibleMinMax: {x: 0.08, y: 0.3}
   blinkInvisibleMinMax: {x: 0.1, y: 0.92}
   perFlickerLengthMinMax: {x: 0.3, y: 1}
   huntStartingDistanceMinMax: {x: 10, y: 20}
+  huntDurationRandomMinMax: {x: -5, y: 5}
+  tempMinMax: {x: 13, y: 22}
   ghostGender: 2
   speedScaling: 0.083
   scaleStep: 5

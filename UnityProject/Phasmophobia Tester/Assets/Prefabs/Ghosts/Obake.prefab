@@ -91,6 +91,8 @@ MonoBehaviour:
   blinkInvisibleMinMax: {x: 0.1, y: 0.92}
   perFlickerLengthMinMax: {x: 0.3, y: 1}
   huntStartingDistanceMinMax: {x: 10, y: 20}
+  huntDurationRandomMinMax: {x: -5, y: 5}
+  tempMinMax: {x: 13, y: 22}
   ghostGender: 2
   shapeshiftBlinks: 0c0000001b00000027000000360000003e00000050000000690000007800000084000000
   maleModels:

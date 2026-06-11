@@ -20,6 +20,15 @@ public class Obambo : Ghost
         EvaluateState();
     }
 
+    public override void StartHunt()
+    {
+        base.StartHunt();
+        CancelInvoke(nameof(StopHunt));
+        float huntTimeMult = 1f;
+        if (!isCalm) huntTimeMult = 0.8f;
+        Invoke(nameof(StopHunt), gameManager.HuntDuration * huntTimeMult + Random.Range(huntDurationRandomMinMax.x, huntDurationRandomMinMax.y));
+    }
+
     protected override void GetHuntSanity()
     {
         float currentThreashold = huntSanityThreashold;

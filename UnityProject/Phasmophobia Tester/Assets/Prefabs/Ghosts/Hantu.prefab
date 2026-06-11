@@ -56,8 +56,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hantu
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5969216610140486838, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3973775981806965630}
   m_SourcePrefab: {fileID: 100100000, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+--- !u!1 &9172944225659312023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3472864050192734809, guid: 84ea60493e46a034dbfc50a2d3a6cb59, type: 3}
+  m_PrefabInstance: {fileID: 5728243754571304398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-3973775981806965630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9172944225659312023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e99af3c86832614090b8fac83320af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Hantu
+  walkSpeed: 1.7
+  losSpeed: 1.7
+  losSpeedGainMultiplier: 1
+  losSpeedGainTime: 26
+  losSpeedDecayTime: 65
+  huntSanityThreashold: 50
+  huntCooldown: 25
+  smudgeHuntCooldown: 90
+  footstepAudioRange: 20
+  maxTempSwing: 6
+  blinkVisibleMinMax: {x: 0.08, y: 0.3}
+  blinkInvisibleMinMax: {x: 0.1, y: 0.92}
+  perFlickerLengthMinMax: {x: 0.3, y: 1}
+  huntStartingDistanceMinMax: {x: 10, y: 20}
+  huntDurationRandomMinMax: {x: -5, y: 5}
+  tempMinMax: {x: 1, y: 22}
+  ghostGender: 2
