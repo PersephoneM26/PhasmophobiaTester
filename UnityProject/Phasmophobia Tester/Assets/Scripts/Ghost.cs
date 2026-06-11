@@ -30,7 +30,7 @@ public class Ghost : MonoBehaviour
     protected bool isMale, hasLOS, isMovingForward, isMovingBackward, hasBeenSmudged, isHunting, isFirstHunt;
     protected string secondsRemainderSinceLastHunt, contractSecondsRemainder;
     protected List<int> saltsSteppedIn = new List<int>();
-    protected EventInstance staticSFX;
+    protected Color targetLightColour;
 
     protected bool isMoving => (isMovingForward || isMovingBackward);
     protected float tempMinMaxAvg => (tempMinMax.x + tempMinMax.y) / 2f;
@@ -74,11 +74,7 @@ public class Ghost : MonoBehaviour
         currentTemp = tempMinMax.y * Random.Range(0.9f, 1f);
         targetTemp = Mathf.RoundToInt(Random.Range(tempMinMax.x, tempMinMax.y));
         isFirstHunt = true;
-        staticSFX = RuntimeManager.CreateInstance(gameManager.EquipmentDisruptionSFX);
-        staticSFX.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
-        staticSFX.setVolume(1f);
-        staticSFX.start();
-        staticSFX.release();
+        targetLightColour = gameManager.Light.color;
     }
 
     protected virtual void Update()
@@ -111,19 +107,44 @@ public class Ghost : MonoBehaviour
         }*/
         totalContractTime += Time.deltaTime;
         EvaluateTemperature();
+        EvaluateLightColour();
     }
 
     protected virtual void EvaluateTemperature()
     {
         if (Mathf.RoundToInt(currentTemp) > targetTemp)
         {
-            currentTemp = Mathf.Clamp(currentTemp + (Random.Range(tempMinMaxAvg / 150, tempMinMaxAvg / 30) * Time.deltaTime * Mathf.Sign(Random.Range(-1f * (currentTemp - targetTemp + 1f), 1f))), tempMinMax.x, tempMinMax.y);
+            currentTemp = Mathf.Clamp(currentTemp + (Random.Range(tempMinMaxAvg / 150f, tempMinMaxAvg / 30f) * Time.deltaTime * Mathf.Sign(Random.Range(-1f * (currentTemp - targetTemp + 1f), 1f))), tempMinMax.x, tempMinMax.y);
         }
         else if (Mathf.RoundToInt(currentTemp) < targetTemp)
         {
-            currentTemp = Mathf.Clamp(currentTemp + (Random.Range(tempMinMaxAvg / 150, tempMinMaxAvg / 30) * Time.deltaTime * Mathf.Sign(Random.Range(-1f, targetTemp - currentTemp + 1f))), tempMinMax.x, tempMinMax.y);
+            currentTemp = Mathf.Clamp(currentTemp + (Random.Range(tempMinMaxAvg / 150f, tempMinMaxAvg / 30f) * Time.deltaTime * Mathf.Sign(Random.Range(-1f, targetTemp - currentTemp + 1f))), tempMinMax.x, tempMinMax.y);
         }
         else targetTemp = Mathf.RoundToInt(Random.Range(Mathf.Max(targetTemp - maxTempSwing, tempMinMax.x), Mathf.Min(targetTemp + maxTempSwing, tempMinMax.y)));
+    }
+
+    protected void EvaluateLightColour()
+    {
+        if (gameManager.Light.color.a > targetLightColour.a)
+        {
+            gameManager.Light.color = new Color
+            (
+                gameManager.Light.color.r, 
+                gameManager.Light.color.g, 
+                gameManager.Light.color.b,
+                Mathf.Clamp(gameManager.Light.color.a + (Random.Range(-gameManager.LightFlickerStrength, gameManager.LightFlickerStrength) * Time.deltaTime * Mathf.Sign(Random.Range(-1f * (gameManager.Light.color.a - targetLightColour.a + 1f), 1f))), 0f, 255f)
+            );
+        }
+        else if (gameManager.Light.color.a < targetLightColour.a)
+        {
+            gameManager.Light.color = new Color
+            (
+                gameManager.Light.color.r,
+                gameManager.Light.color.g,
+                gameManager.Light.color.b,
+                Mathf.Clamp(gameManager.Light.color.a + (Random.Range(-gameManager.LightFlickerStrength, gameManager.LightFlickerStrength) * Time.deltaTime * Mathf.Sign(Random.Range(-1f, gameManager.Light.color.a - targetLightColour.a + 1f))), 0f, 255f)
+            );
+        }
     }
 
     public virtual void GainLOS()
@@ -222,6 +243,11 @@ public class Ghost : MonoBehaviour
         foreach (int i in saltsSteppedIn)
         {
             StepInSalt(i);
+        }
+
+        if (distanceFromPlayer <= equipmentDisruptionRange)
+        {
+            targetLightColour = new Color(gameManager.Light.color.r, gameManager.Light.color.g, gameManager.Light.color.b, Mathf.Clamp(gameManager.Light.color.a * Random.Range(0.15f, 1.5f), 0f, 255f));
         }
 
         Invoke(nameof(Move), gameManager.DistanceUpdateFrequence);

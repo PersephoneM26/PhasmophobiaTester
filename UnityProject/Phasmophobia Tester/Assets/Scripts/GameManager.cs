@@ -16,9 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Sprite> ghostModelsMale = new(), ghostModelsFemale = new();
     [SerializeField] private GameObject ghostModelPrefab, saltPrefab, disturbedSaltPrefab, saltParent, saltButtonsParent, sliderPrefab, saltCancelButton, defaultGhostPrefab;
     [SerializeField] private TextMeshProUGUI saltText, contractTimeText, currentSanityText, currentTemperatureText;
-    [SerializeField] private EventReference footstep, equipmentDisruptionSFX;
-    [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence, initialHuntSecondsPerSanity, totalSalts, huntDuration, statsVisibleDuration;
+    [SerializeField] private EventReference footstep;
+    [SerializeField] private float gracePeriod, startingSanity, playerSpeed, distanceUpdateFrequence, initialHuntSecondsPerSanity, totalSalts, huntDuration, statsVisibleDuration, lightFlickerStrength;
     [SerializeField] private Canvas canvas;
+    [SerializeField] private Image lightImage;
 
     // Internal variables
     private bool isMale, equipmentOn, isPlacingSalt;
@@ -37,13 +38,14 @@ public class GameManager : MonoBehaviour
     public float DistanceUpdateFrequence => distanceUpdateFrequence;
     public float PlayerSpeed => playerSpeed;
     public EventReference Footstep => footstep;
-    public EventReference EquipmentDisruptionSFX => equipmentDisruptionSFX;
     public float GracePeriod => gracePeriod;
     public bool EquipmentOn => equipmentOn;
     public GameObject DisturbedSaltPrefab => disturbedSaltPrefab;
     public GameObject SliderPrefab => sliderPrefab;
     public float HuntDuration => huntDuration;
     public GameObject DefaultGhostPrefab => defaultGhostPrefab;
+    public Image Light => lightImage;
+    public float LightFlickerStrength => lightFlickerStrength;
 
     // Misc variables
 
@@ -119,9 +121,10 @@ public class GameManager : MonoBehaviour
         ghost.StopHunt();
     }
 
-    public void ToggleEquipment()
+    public void ToggleEquipment(GameObject light)
     {
         equipmentOn = !equipmentOn;
+        light.SetActive(equipmentOn);
     }
 
     public void CheckTime()
