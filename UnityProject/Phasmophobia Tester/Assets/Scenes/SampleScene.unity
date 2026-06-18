@@ -12294,10 +12294,10 @@ MonoBehaviour:
   currentTemperatureText: {fileID: 4443396}
   footstep:
     Guid:
-      Data1: -997638482
-      Data2: 1214042953
-      Data3: 109766024
-      Data4: 895789327
+      Data1: -2003967329
+      Data2: 1111123591
+      Data3: -1855618651
+      Data4: 1833594568
     Path: event:/Footstep
   gracePeriod: 0
   startingSanity: 100

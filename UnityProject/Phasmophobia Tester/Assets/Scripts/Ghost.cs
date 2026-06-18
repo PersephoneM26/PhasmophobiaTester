@@ -1,4 +1,3 @@
-using FMOD.Studio;
 using FMODUnity;
 using System.Collections.Generic;
 using TMPro;
@@ -90,7 +89,7 @@ public class Ghost : MonoBehaviour
             currentSpeed = walkSpeed * currentLOSMult;
         }
         else currentSpeed = walkSpeed;
-        /*if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
             isMovingForward = true;
             isMovingBackward = false;
@@ -104,7 +103,7 @@ public class Ghost : MonoBehaviour
         {
             isMovingBackward = false;
             isMovingForward = false;
-        }*/
+        }
         totalContractTime += Time.deltaTime;
         EvaluateTemperature();
         EvaluateLightColour();
@@ -201,7 +200,7 @@ public class Ghost : MonoBehaviour
 
     protected virtual void Step()
     {
-        PlayOneShotWithVolume(gameManager.Footstep, Mathf.Clamp01(1 - (distanceFromPlayer / footstepAudioRange)));
+        //PlayOneShotWithVolume(gameManager.Footstep, Mathf.Clamp01(1 - (distanceFromPlayer / footstepAudioRange)));
         //Debug.Log(SpeedToStepsPerSecond(currentSpeed));
         Invoke(nameof(Step), SpeedToStepsPerSecond(currentSpeed));
     }

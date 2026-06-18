@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.fmod.fmod-for-unity-2-03": {
-      "version": "2.3.12",
+      "version": "2.3.13",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
